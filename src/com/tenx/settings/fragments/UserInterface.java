@@ -34,8 +34,14 @@ public class UserInterface extends SettingsPreferenceFragment
     public static final String TAG = "UserInterface";
 
     private static final String KEY_MONET = "monet_settings";
+    private static final String KEY_ICON_PACK = "android.theme.customization.icon_pack";
+    private static final String KEY_ADAPTIVE_ICON_PACK = "android.theme.customization.adaptive_icon_shape";
+    private static final String KEY_SYSTEM_FONT = "android.theme.customization.fonts";
 
     private Preference mMonet;
+    private Preference mIconPack;
+    private Preference mAdaptiveIconPack;
+    private Preference mSystemFont;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,9 @@ public class UserInterface extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.tenx_settings_ui);
 
         mMonet = (Preference) findPreference(KEY_MONET);
+        mIconPack = (Preference) findPreference(KEY_ICON_PACK);
+        mAdaptiveIconPack = (Preference) findPreference(KEY_ADAPTIVE_ICON_PACK);
+        mSystemFont = (Preference) findPreference(KEY_SYSTEM_FONT);
 
         setLayoutToPreference();
     }
@@ -53,7 +62,10 @@ public class UserInterface extends SettingsPreferenceFragment
     }
 
     private void setLayoutToPreference() {
-        mMonet.setLayoutResource(R.layout.tenx_preference);
+        mMonet.setLayoutResource(R.layout.tenx_preference_top);
+        mIconPack.setLayoutResource(R.layout.tenx_preference_middle);
+        mAdaptiveIconPack.setLayoutResource(R.layout.tenx_preference_middle);
+        mSystemFont.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
