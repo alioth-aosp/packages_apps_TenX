@@ -37,11 +37,13 @@ public class UserInterface extends SettingsPreferenceFragment
     private static final String KEY_ICON_PACK = "android.theme.customization.icon_pack";
     private static final String KEY_ADAPTIVE_ICON_PACK = "android.theme.customization.adaptive_icon_shape";
     private static final String KEY_SYSTEM_FONT = "android.theme.customization.fonts";
+    private static final String KEY_CLOCK_FONT = "android.theme.customization.lockscreen_clock_font";
 
     private Preference mMonet;
     private Preference mIconPack;
     private Preference mAdaptiveIconPack;
     private Preference mSystemFont;
+    private Preference mClockFont;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class UserInterface extends SettingsPreferenceFragment
         mIconPack = (Preference) findPreference(KEY_ICON_PACK);
         mAdaptiveIconPack = (Preference) findPreference(KEY_ADAPTIVE_ICON_PACK);
         mSystemFont = (Preference) findPreference(KEY_SYSTEM_FONT);
+        mClockFont = (Preference) findPreference(KEY_CLOCK_FONT);
 
         setLayoutToPreference();
     }
@@ -65,7 +68,8 @@ public class UserInterface extends SettingsPreferenceFragment
         mMonet.setLayoutResource(R.layout.tenx_preference_top);
         mIconPack.setLayoutResource(R.layout.tenx_preference_middle);
         mAdaptiveIconPack.setLayoutResource(R.layout.tenx_preference_middle);
-        mSystemFont.setLayoutResource(R.layout.tenx_preference_bottom);
+        mSystemFont.setLayoutResource(R.layout.tenx_preference_middle);
+        mClockFont.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
