@@ -96,6 +96,13 @@
             android:summary="@string/quick_settings_require_unlock_summary"
             android:defaultValue="true"/>
 
+        <!-- Data usage -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_show_data_usage"
+            android:title="@string/quick_settings_data_usage_title"
+            android:summary="@string/quick_settings_data_usage_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
