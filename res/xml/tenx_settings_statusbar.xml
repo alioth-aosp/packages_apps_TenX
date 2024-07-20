@@ -97,6 +97,13 @@
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="false" />
 
+        <!-- Bluetooth battery status -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/status_bar_bluetooth_battery_title"
+            android:summary="@string/status_bar_bluetooth_battery_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
