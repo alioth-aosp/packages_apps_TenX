@@ -37,6 +37,27 @@
             android:summary="@string/status_bar_clock_and_date_summary"
             android:fragment="com.tenx.settings.fragments.statusbar.Clock" />
 
+        <!-- Mic/Camera privacy indicator -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_camera_privacy_indicator"
+            android:title="@string/status_bar_mic_camera_privacy_indicator_title"
+            android:summary="@string/status_bar_mic_camera_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <!-- Location privacy indicator -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_location_privacy_indicator"
+            android:title="@string/status_bar_location_privacy_indicator_title"
+            android:summary="@string/status_bar_location_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+        <!-- Projection privacy indicator -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_projection_privacy_indicator"
+            android:title="@string/status_bar_projection_privacy_indicator_title"
+            android:summary="@string/status_bar_projection_privacy_indicator_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
