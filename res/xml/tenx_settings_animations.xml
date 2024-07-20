@@ -18,4 +18,36 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/animations_title" >
 
+    <PreferenceCategory
+        android:key="quick_settings_animations_category"
+        android:title="@string/quick_settings_tiles_animations_category_title">
+
+        <!-- Tiles animation style -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_animation_style"
+            android:title="@string/quick_settings_tile_animation_style_title"
+            android:entries="@array/quick_settings_tile_animation_style_entries"
+            android:entryValues="@array/quick_settings_tile_animation_style_values"
+            android:defaultValue="0" />
+
+        <!-- Animation duration -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_tile_animation_duration"
+            android:title="@string/quick_settings_tile_animation_duration_title"
+            android:defaultValue="1"
+            settings:interval="1"
+            settings:units="@string/unit_seconds"
+            android:max="5"
+            android:min="1" />
+
+        <!-- Animation interpolator -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_animation_interpolator"
+            android:title="@string/quick_settings_tile_animation_interpolator_title"
+            android:entries="@array/quick_settings_tile_animation_interpolator_entries"
+            android:entryValues="@array/quick_settings_tile_animation_interpolator_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

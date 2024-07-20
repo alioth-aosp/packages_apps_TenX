@@ -52,6 +52,7 @@
     <string name="status_bar_gestures_category_title">Gestures</string>
     <string name="quick_settings_lock_screen_category_title">Lock screen</string>
     <string name="quick_settings_panel_category_title">Panel</string>
+    <string name="quick_settings_tiles_animations_category_title">Tiles</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -233,5 +234,21 @@
     <!-- QS data usage -->
     <string name="quick_settings_data_usage_title">Data usage</string>
     <string name="quick_settings_data_usage_summary">Display data usage summary in quick settings footer</string>
+
+    <!-- QS Tiles animations -->
+    <string name="quick_settings_tile_animation_style_title">Tiles animation style</string>
+    <string name="quick_settings_tile_animation_duration_title">Animation duration</string>
+    <string name="quick_settings_tile_animation_interpolator_title">Animation interpolator</string>
+    <string name="quick_settings_tile_animation_style_off">No animation</string>
+    <string name="quick_settings_tile_animation_style_flip">Flip</string>
+    <string name="quick_settings_tile_animation_style_rotate">Rotate</string>
+    <string name="quick_settings_tile_animation_interpolator_linear">Linear</string>
+    <string name="quick_settings_tile_animation_interpolator_accelerate">Accelerate</string>
+    <string name="quick_settings_tile_animation_interpolator_decelerate">Decelerate</string>
+    <string name="quick_settings_tile_animation_interpolator_accelerateDecelerate">Accelerate decelerate</string>
+    <string name="quick_settings_tile_animation_interpolator_bounce">Bounce</string>
+    <string name="quick_settings_tile_animation_interpolator_overshoot">Overshoot</string>
+    <string name="quick_settings_tile_animation_interpolator_anticipate">Anticipate</string>
+    <string name="quick_settings_tile_animation_interpolator_anticipateOvershoot">Anticipate overshoot</string>
 
 </resources>

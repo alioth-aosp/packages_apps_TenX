@@ -40,19 +40,50 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
+import com.tenx.support.preferences.SystemSettingListPreference;
+import com.tenx.support.preferences.SystemSettingSeekBarPreference;
+
 public class Animations extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_TILE_ANIM_STYLE = "qs_tile_animation_style";
+    private static final String KEY_TILE_ANIM_DURATION = "qs_tile_animation_duration";
+    private static final String KEY_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+
+    private SystemSettingListPreference mTileAnimationStyle;
+    private SystemSettingSeekBarPreference mTileAnimationDuration;
+    private SystemSettingListPreference mTileAnimationInterpolator;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.tenx_settings_animations);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mTileAnimationStyle = (SystemSettingListPreference) findPreference(KEY_TILE_ANIM_STYLE);
+        mTileAnimationDuration = (SystemSettingSeekBarPreference) findPreference(KEY_TILE_ANIM_DURATION);
+        mTileAnimationInterpolator = (SystemSettingListPreference) findPreference(KEY_TILE_ANIM_INTERPOLATOR);
+
+        mTileAnimationStyle.setOnPreferenceChangeListener(this);
+
+        int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
+        updateTileAnimStyle(tileAnimationStyle);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mTileAnimationStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateTileAnimStyle(value);
+            return true;
+        }
         return false;
+    }
+
+    private void updateTileAnimStyle(int tileAnimationStyle) {
+        mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
+        mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
     @Override
