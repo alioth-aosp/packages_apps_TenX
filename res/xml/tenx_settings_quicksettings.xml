@@ -89,6 +89,13 @@
             android:summary="@string/quick_settings_auto_brightness_icon_summary"
             android:defaultValue="true" />
 
+        <!-- Secure QS tiles require unlock -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="qstile_requires_unlocking"
+            android:title="@string/quick_settings_require_unlock_title"
+            android:summary="@string/quick_settings_require_unlock_summary"
+            android:defaultValue="true"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
