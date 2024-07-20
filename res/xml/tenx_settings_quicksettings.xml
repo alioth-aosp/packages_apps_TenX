@@ -18,4 +18,28 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
+    <PreferenceCategory
+        android:key="qs_icons"
+        android:title="@string/status_bar_icons_category_title">
+
+        <!-- Battery styles -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_battery_style"
+            android:title="@string/status_bar_battery_style_title"
+            android:summary="%s"
+            android:entries="@array/qs_battery_style_entries"
+            android:entryValues="@array/qs_battery_style_values"
+            android:defaultValue="-1" />
+
+        <!-- Battery percent -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_show_battery_percent"
+            android:title="@string/status_bar_battery_percent_title"
+            android:summary="%s"
+            android:entries="@array/status_bar_battery_percent_entries"
+            android:entryValues="@array/status_bar_battery_percent_values"
+            android:defaultValue="2" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
