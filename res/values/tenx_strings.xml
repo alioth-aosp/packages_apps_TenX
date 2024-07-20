@@ -51,6 +51,7 @@
     <string name="status_bar_icons_category_title">Icons</string>
     <string name="status_bar_gestures_category_title">Gestures</string>
     <string name="quick_settings_lock_screen_category_title">Lock screen</string>
+    <string name="quick_settings_panel_category_title">Panel</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -209,5 +210,9 @@
     <!-- Disable QS on lock screen -->
     <string name="quick_settings_secure_lock_screen_title">Hide on secure lock screen</string>
     <string name="quick_settings_secure_lock_screen_summary">Hide all quick settings in the notification shade while the device is locked</string>
+
+    <!-- OOS styles notification dismiss icon -->
+    <string name="quick_settings_floating_clear_all_title">Floating clear all button</string>
+    <string name="quick_settings_floating_clear_all_summary">Replace the \'clear all\' text button with a bottom-centered floating one</string>
 
 </resources>
