@@ -49,6 +49,7 @@
 
     <!-- Preference category title -->
     <string name="status_bar_icons_category_title">Icons</string>
+    <string name="status_bar_gestures_category_title">Gestures</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -98,5 +99,9 @@
     <!-- Statusbar tuner -->
     <string name="status_bar_tuner_title">Status bar tuner</string>
     <string name="status_bar_tuner_summary">Choose which system icons can be shown</string>
+
+    <!-- Statusbar gestures -->
+    <string name="status_bar_brightness_control_title">Brightness control</string>
+    <string name="status_bar_brightness_control_summary">Adjust brightness by swiping across the status bar</string>
 
 </resources>
