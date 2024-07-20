@@ -42,4 +42,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="quick_settings_lock_screen_category"
+        android:title="@string/quick_settings_lock_screen_category_title">
+
+        <!-- Hide on secure lock screen -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="secure_lockscreen_qs_disabled"
+            android:title="@string/quick_settings_secure_lock_screen_title"
+            android:summary="@string/quick_settings_secure_lock_screen_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
