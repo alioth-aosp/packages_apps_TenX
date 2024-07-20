@@ -24,6 +24,8 @@ import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.view.View;
+
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -31,6 +33,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import lineageos.preference.LineageSystemSettingListPreference;
 import com.tenx.support.preferences.SystemSettingListPreference;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
 
@@ -40,14 +43,20 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+    private static final String KEY_QUICK_PULLDOWN = "qs_quick_pulldown";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
     private static final int BATTERY_STYLE_HIDDEN = 5;
+    private static final int PULLDOWN_DIR_NONE = 0;
+    private static final int PULLDOWN_DIR_RIGHT = 1;
+    private static final int PULLDOWN_DIR_LEFT = 2;
+    private static final int PULLDOWN_DIR_BOTH = 3;
 
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingSwitchPreference mBatteryTextCharging;
+    private LineageSystemSettingListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -75,6 +84,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                 (batterystyle != BATTERY_STYLE_TEXT && batterypercent != 2));
+
+        mQuickPulldown =
+                (LineageSystemSettingListPreference) findPreference(KEY_QUICK_PULLDOWN);
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        updateQuickPulldownSummary(mQuickPulldown.getIntValue(0));
+
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            mQuickPulldown.setEntries(R.array.status_bar_quick_pull_down_entries_rtl);
+            mQuickPulldown.setEntryValues(R.array.status_bar_quick_pull_down_values_rtl);
+        }
     }
 
     @Override
@@ -98,8 +117,37 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mBatteryTextCharging.setEnabled(batterystyle == BATTERY_STYLE_HIDDEN ||
                     (batterystyle != BATTERY_STYLE_TEXT && value != 2));
             return true;
+        } else if (preference == mQuickPulldown) {
+            int value = Integer.parseInt((String) newValue);
+            updateQuickPulldownSummary(value);
+            return true;
         }
         return false;
+    }
+
+    private void updateQuickPulldownSummary(int value) {
+        String summary = "";
+        switch (value) {
+            case PULLDOWN_DIR_NONE:
+                summary = getResources().getString(
+                    R.string.status_bar_quick_pull_down_off);
+                break;
+            case PULLDOWN_DIR_RIGHT:
+            case PULLDOWN_DIR_LEFT:
+            case PULLDOWN_DIR_BOTH:
+                summary = getResources().getString(
+                    R.string.status_bar_quick_pull_down_summary,
+                    getResources().getString(
+                        value == PULLDOWN_DIR_RIGHT
+                            ? R.string.status_bar_quick_pull_down_right
+                            : value == PULLDOWN_DIR_LEFT
+                                ? R.string.status_bar_quick_pull_down_left
+                                : R.string.status_bar_quick_pull_down_both
+                    )
+                );
+                break;
+        }
+        mQuickPulldown.setSummary(summary);
     }
 
     @Override
