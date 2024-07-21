@@ -235,6 +235,10 @@
     <string name="quick_settings_data_usage_title">Data usage</string>
     <string name="quick_settings_data_usage_summary">Display data usage summary in quick settings footer</string>
 
+    <!-- QS data usage icon -->
+    <string name="quick_settings_data_usage_icon_title">Data usage icon</string>
+    <string name="quick_settings_data_usage_icon_summary">Display data usage icon in quick settings footer</string>
+
     <!-- QS Tiles animations -->
     <string name="quick_settings_tile_animation_style_title">Tiles animation style</string>
     <string name="quick_settings_tile_animation_duration_title">Animation duration</string>
