@@ -369,4 +369,41 @@
         <item>7</item>
     </string-array>
 
+    <!-- Floating clear all button background styles -->
+    <string-array name="quick_settings_floating_clear_all_background_style_entries" translatable="false">
+        <item>@string/quick_settings_floating_clear_all_background_style_square</item>
+        <item>@string/quick_settings_floating_clear_all_background_style_oval</item>
+    </string-array>
+
+    <string-array name="quick_settings_floating_clear_all_background_style_values" translatable="false">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="quick_settings_floating_clear_all_icon_style_entries" translatable="false">
+        <item>@string/quick_settings_floating_clear_all_icon_style_zzz</item>
+        <item>@string/quick_settings_floating_clear_all_icon_style_delete</item>
+       	<item>@string/quick_settings_floating_clear_all_icon_style_graph</item>
+       	<item>@string/quick_settings_floating_clear_all_icon_style_layers</item>
+       	<item>@string/quick_settings_floating_clear_all_icon_style_arrow_left</item>
+       	<item>@string/quick_settings_floating_clear_all_icon_style_arrow_right</item>
+        <item>@string/quick_settings_floating_clear_all_icon_style_bell</item>
+        <item>@string/quick_settings_floating_clear_all_icon_style_half_moon</item>
+        <item>@string/quick_settings_floating_clear_all_icon_style_clear</item>
+        <item>@string/quick_settings_floating_clear_all_icon_style_default</item>
+    </string-array>
+
+    <string-array name="quick_settings_floating_clear_all_icon_style_values" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>0</item>
+    </string-array>
+
 </resources>
