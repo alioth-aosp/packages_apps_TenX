@@ -135,6 +135,16 @@
         android:key="qs_tiles"
         android:title="@string/quick_settings_tiles_category_title">
 
+        <!-- Default qs tile corner radius -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="default_qs_tile_corner_radius"
+            android:title="@string/default_qs_tiles_corner_radius_title"
+            android:max="32"
+            settings:interval="1"
+            settings:min="0"
+            settings:units="dp"
+            android:defaultValue="32" />
+
         <!-- Hide label -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"

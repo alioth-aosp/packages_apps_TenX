@@ -283,4 +283,7 @@
     <string name="quick_settings_qqs_rows_portrait_title">Quick QS Rows (portrait)</string>
     <string name="quick_settings_qqs_rows_landscape_title">Quick QS Rows (landscape)</string>
 
+    <!-- QS tile default corner radius -->
+    <string name="default_qs_tiles_corner_radius_title">Corner radius</string>
+
 </resources>
