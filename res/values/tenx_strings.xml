@@ -286,4 +286,11 @@
     <!-- QS tile default corner radius -->
     <string name="default_qs_tiles_corner_radius_title">Corner radius</string>
 
+    <!-- QS tile default styles -->
+    <string name="default_qs_tiles_style_title">Style</string>
+    <string name="default_qs_tiles_style_default">Default</string>
+    <string name="default_qs_tiles_style_stroke">Stroke</string>
+    <string name="default_qs_tiles_style_stroke_alpha">Stroke (Background alpha)</string>
+    <string name="default_qs_tiles_style_android_oreo">Android (Oreo)</string>
+
 </resources>

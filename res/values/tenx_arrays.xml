@@ -406,4 +406,19 @@
         <item>0</item>
     </string-array>
 
+    <!-- Default qs tile styles -->
+    <string-array name="default_qs_tiles_style_entries" translatable="false">
+        <item>@string/default_qs_tiles_style_default</item>
+        <item>@string/default_qs_tiles_style_stroke</item>
+        <item>@string/default_qs_tiles_style_stroke_alpha</item>
+        <item>@string/default_qs_tiles_style_android_oreo</item>
+    </string-array>
+
+    <string-array name="default_qs_tiles_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

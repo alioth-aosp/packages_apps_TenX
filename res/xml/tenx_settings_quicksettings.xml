@@ -145,6 +145,14 @@
             settings:units="dp"
             android:defaultValue="32" />
 
+        <!-- Default qs tile style -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="default_qs_tile_styles"
+            android:title="@string/default_qs_tiles_style_title"
+            android:entries="@array/default_qs_tiles_style_entries"
+            android:entryValues="@array/default_qs_tiles_style_values"
+            android:defaultValue="0" />
+
         <!-- Hide label -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
