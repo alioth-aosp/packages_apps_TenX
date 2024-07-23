@@ -153,6 +153,30 @@
             android:entryValues="@array/default_qs_tiles_style_values"
             android:defaultValue="0" />
 
+        <!-- Qs tile icon colors -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_icon_color"
+            android:title="@string/qs_tile_icon_color_title"
+            android:entries="@array/qs_tile_all_color_entries"
+            android:entryValues="@array/qs_tile_all_color_values"
+            android:defaultValue="0" />
+
+        <!-- Qs tile label colors -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_primary_label_color"
+            android:title="@string/qs_tile_primary_label_color_title"
+            android:entries="@array/qs_tile_all_color_entries"
+            android:entryValues="@array/qs_tile_all_color_values"
+            android:defaultValue="0" />
+
+        <!-- Qs tile label colors -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="qs_tile_secondary_label_color"
+            android:title="@string/qs_tile_secondary_label_color_title"
+            android:entries="@array/qs_tile_all_color_entries"
+            android:entryValues="@array/qs_tile_all_color_values"
+            android:defaultValue="0" />
+
         <!-- Hide label -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
