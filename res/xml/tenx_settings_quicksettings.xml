@@ -160,6 +160,13 @@
             android:summary="@string/quick_settings_tile_label_hide_summary"
             android:defaultValue="false" />
 
+        <!-- Hide secondary label only -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_secondary_label_hide"
+            android:title="@string/quick_settings_tile_secondary_label_hide_title"
+            android:summary="@string/quick_settings_tile_secondary_label_hide_summary"
+            android:defaultValue="false" />
+
         <!-- Label text size -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_label_size"

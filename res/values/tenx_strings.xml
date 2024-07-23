@@ -293,4 +293,7 @@
     <string name="default_qs_tiles_style_stroke_alpha">Stroke (Background alpha)</string>
     <string name="default_qs_tiles_style_android_oreo">Android (Oreo)</string>
 
+    <!-- Hide QS tile secondary label -->
+    <string name="quick_settings_tile_secondary_label_hide_title">Hide label (Secondary)</string>
+    <string name="quick_settings_tile_secondary_label_hide_summary">Only show icon and primary label in tile</string>
 </resources>
