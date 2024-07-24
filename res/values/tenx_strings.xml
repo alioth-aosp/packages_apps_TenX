@@ -54,6 +54,7 @@
     <string name="quick_settings_panel_category_title">Panel</string>
     <string name="quick_settings_tiles_animations_category_title">Tiles</string>
     <string name="quick_settings_tiles_category_title">Tiles</string>
+    <string name="navbar_category_title">Navbar</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -306,5 +307,9 @@
     <string name="qs_tile_all_color_primary">Primary</string>
     <string name="qs_tile_all_color_secondary">Secondary</string>
     <string name="qs_tile_all_color_random">Random</string>
+
+    <!-- Force show navbar toggle -->
+    <string name="force_show_navbar_title">Navbar</string>
+    <string name="force_show_navbar_summary">Enable navbar gestures</string>
 
 </resources>
