@@ -295,6 +295,15 @@
     <string name="default_qs_tiles_style_stroke_alpha">Stroke (Background alpha)</string>
     <string name="default_qs_tiles_style_android_oreo">Android (Oreo)</string>
     <string name="default_qs_tiles_style_gradient">Gradient</string>
+    <string name="default_qs_tiles_style_random">Random</string>
+    <string name="default_qs_tiles_style_random_alpha">Random (Background alpha)</string>
+    <string name="default_qs_tiles_style_alpha">Background (Alpha)</string>
+    <string name="default_qs_tiles_style_random_stroke">Stroke (Random)</string>
+    <string name="default_qs_tiles_style_random_stroke_alpha">Random (Stroke &amp; alpha)</string>
+    <string name="default_qs_tiles_style_dashed_stroke">Stroke (Dashed)</string>
+    <string name="default_qs_tiles_style_dashed_stroke_alpha">Stroke (Dashed with background alpha)</string>
+    <string name="default_qs_tiles_style_random_dashed_stroke">Stroke (Random dashed)</string>
+    <string name="default_qs_tiles_style_random_dashed_stroke_alpha">Stroke (Random dashed &amp; alpha)</string>
 
     <!-- Hide QS tile secondary label -->
     <string name="quick_settings_tile_secondary_label_hide_title">Hide label (Secondary)</string>

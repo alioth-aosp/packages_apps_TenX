@@ -413,6 +413,15 @@
         <item>@string/default_qs_tiles_style_stroke_alpha</item>
         <item>@string/default_qs_tiles_style_android_oreo</item>
         <item>@string/default_qs_tiles_style_gradient</item>
+        <item>@string/default_qs_tiles_style_random</item>
+        <item>@string/default_qs_tiles_style_random_alpha</item>
+        <item>@string/default_qs_tiles_style_alpha</item>
+        <item>@string/default_qs_tiles_style_random_stroke</item>
+        <item>@string/default_qs_tiles_style_random_stroke_alpha</item>
+        <item>@string/default_qs_tiles_style_dashed_stroke</item>
+        <item>@string/default_qs_tiles_style_dashed_stroke_alpha</item>
+        <item>@string/default_qs_tiles_style_random_dashed_stroke</item>
+        <item>@string/default_qs_tiles_style_random_dashed_stroke_alpha</item>
     </string-array>
 
     <string-array name="default_qs_tiles_style_values" translatable="false">
@@ -421,6 +430,15 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
     </string-array>
 
     <!-- QS tile colors -->
