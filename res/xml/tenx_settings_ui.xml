@@ -16,6 +16,19 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/tenx_title" >
+    android:title="@string/tenx_title">
+
+    <PreferenceCategory
+        android:key="theme"
+        android:title="@string/theme_category_title">
+
+        <!-- Monet Theme Engine -->
+        <Preference
+            android:key="monet_settings"
+            android:title="@string/monet_settings_title"
+            android:summary="@string/monet_settings_sammary"
+            android:fragment="com.tenx.settings.fragments.theme.MonetSettings" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
