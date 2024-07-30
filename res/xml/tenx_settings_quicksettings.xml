@@ -18,7 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="qs_icons"
         android:title="@string/status_bar_icons_category_title">
 
@@ -40,9 +40,9 @@
             android:entryValues="@array/status_bar_battery_percent_values"
             android:defaultValue="2" />
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="quick_settings_lock_screen_category"
         android:title="@string/quick_settings_lock_screen_category_title">
 
@@ -53,9 +53,9 @@
             android:summary="@string/quick_settings_secure_lock_screen_summary"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="qs_panel"
         android:title="@string/quick_settings_panel_category_title">
 
@@ -129,9 +129,9 @@
             android:summary="@string/quick_settings_data_usage_icon_summary"
             android:defaultValue="false" />
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="qs_tiles"
         android:title="@string/quick_settings_tiles_category_title">
 
@@ -244,6 +244,6 @@
             settings:interval="1"
             android:defaultValue="1" />
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

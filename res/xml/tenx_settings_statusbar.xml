@@ -18,7 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/statusbar_title" >
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="statusbar_icons"
         android:title="@string/status_bar_icons_category_title">
 
@@ -150,9 +150,9 @@
             android:summary="@string/status_bar_bluetooth_battery_summary"
             android:defaultValue="true" />
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="status_bar_gestures_category"
         android:title="@string/status_bar_gestures_category_title">
 
@@ -172,6 +172,6 @@
             android:entryValues="@array/status_bar_quick_pull_down_values"
             android:defaultValue="0" />
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>
