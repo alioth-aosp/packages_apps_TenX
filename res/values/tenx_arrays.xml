@@ -571,22 +571,4 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="settings_dashboard_background_size_entries" translatable="false">
-        <item>@string/settings_background_size_default</item>
-        <item>@string/settings_background_size_x</item>
-        <item>@string/settings_background_size_y</item>
-        <item>@string/settings_background_size_z</item>
-        <item>@string/settings_background_size_zx</item>
-        <item>@string/settings_background_size_zy</item>
-    </string-array>
-
-    <string-array name="settings_dashboard_background_size_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
 </resources>

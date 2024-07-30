@@ -387,12 +387,6 @@
     <string name="settings_icon_styles_accent">Accent</string>
     <string name="settings_icon_styles_gradient">Gradient</string>
     <string name="settings_background_size_title">Background size</string>
-    <string name="settings_background_size_default">Default</string>
-    <string name="settings_background_size_x">55dp</string>
-    <string name="settings_background_size_y">60dp</string>
-    <string name="settings_background_size_z">65dp</string>
-    <string name="settings_background_size_zx">70dp</string>
-    <string name="settings_background_size_zy">75dp</string>
     <string name="settings_dashboard_arrow_title">Arrow</string>
     <string name="settings_dashboard_arrow_hidden">Hidden</string>
     <string name="settings_dashboard_arrow_shown">Arrow only</string>
