@@ -174,7 +174,6 @@
         <lineageos.preference.LineageSystemSettingListPreference
             android:key="qs_quick_pulldown"
             android:title="@string/status_bar_quick_pull_down_title"
-            android:summary="%"
             android:entries="@array/status_bar_quick_pull_down_entries"
             android:entryValues="@array/status_bar_quick_pull_down_values"
             android:defaultValue="0" />
