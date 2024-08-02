@@ -26,6 +26,12 @@
         android:summary="%s"
         android:defaultValue="0" />
 
+    <lineageos.preference.LineageSecureSettingSwitchPreference
+        android:key="network_traffic_icon_type"
+        android:title="@string/network_traffic_icon_type_title"
+        android:summary="@string/network_traffic_icon_type_summary"
+        android:defaultValue="false" />
+
     <lineageos.preference.LineageSecureSettingListPreference
         android:key="network_traffic_mode"
         android:title="@string/network_traffic_mode_title"

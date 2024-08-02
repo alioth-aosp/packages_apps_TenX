@@ -47,6 +47,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
     private ListPreference mNetTrafficUnits;
     private SwitchPreferenceCompat mNetTrafficAutohide;
     private SwitchPreferenceCompat mNetTrafficHideArrow;
+    private SwitchPreferenceCompat mNetTrafficIconType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,8 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_UNITS);
         mNetTrafficHideArrow = (SwitchPreferenceCompat)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_HIDEARROW);
+        mNetTrafficIconType = (SwitchPreferenceCompat)
+                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_ICON_TYPE);
 
         int location = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
@@ -93,6 +96,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficHideArrow.setEnabled(enabled);
         mNetTrafficRefreshInterval.setEnabled(enabled);
         mNetTrafficUnits.setEnabled(enabled);
+        mNetTrafficIconType.setEnabled(enabled);
     }
 
     @Override

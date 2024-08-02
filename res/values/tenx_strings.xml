@@ -403,6 +403,8 @@
     <string name="network_traffic_location_disable">Disabled</string>
     <string name="network_traffic_location_statusbar">Statusbar</string>
     <string name="network_traffic_location_quick_statusbar">Quick Statusbar</string>
+    <string name="network_traffic_icon_type_title">Indicator style</string>
+    <string name="network_traffic_icon_type_summary">Switch between default &amp; AOSP indicator</string>
     <string name="network_traffic_mode_title">Display mode</string>
     <string name="network_traffic_mode_up">Upload only</string>
     <string name="network_traffic_mode_down">Download only</string>
