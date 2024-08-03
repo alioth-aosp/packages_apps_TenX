@@ -63,7 +63,7 @@
         android:dependency="statusbar_battery_bar" />
 
     <com.tenx.support.colorpicker.ColorPickerSystemPreference
-        android:key="statusbar_battery_bar_battery_low_color"
+        android:key="statusbar_battery_bar_battery_low_color_warning"
         android:title="@string/battery_bar_battery_low_color"
         android:defaultValue="0xfff90028"
         android:dependency="statusbar_battery_bar" />
@@ -85,5 +85,24 @@
         android:title="@string/battery_bar_charging_color"
         android:defaultValue="0xffffc90f"
         android:dependency="statusbar_battery_bar_enable_charging_color" />
+
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_use_gradient_color"
+        android:title="@string/battery_bar_use_gradient_color"
+        android:summary="@string/battery_bar_gradient_color_summary"
+        android:defaultValue="false"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="statusbar_battery_bar_low_color"
+        android:title="@string/battery_bar_low_color"
+        android:defaultValue="0xffff4400"
+        android:dependency="statusbar_battery_bar_use_gradient_color" />
+
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="statusbar_battery_bar_high_color"
+        android:title="@string/battery_bar_high_color"
+        android:defaultValue="0xff99CC00"
+        android:dependency="statusbar_battery_bar_use_gradient_color" />
 
 </PreferenceScreen>
