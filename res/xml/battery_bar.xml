@@ -74,6 +74,12 @@
         android:defaultValue="true"
         android:dependency="statusbar_battery_bar" />
 
+    <com.tenx.support.colorpicker.ColorPickerSystemPreference
+        android:key="statusbar_battery_bar_animate_color"
+        android:title="@string/battery_bar_animate_color"
+        android:defaultValue="0xffff2200"
+        android:dependency="statusbar_battery_bar_animate" />
+
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="statusbar_battery_bar_enable_charging_color"
         android:title="@string/battery_bar_use_charging_color"
