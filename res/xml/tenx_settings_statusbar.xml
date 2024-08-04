@@ -187,4 +187,64 @@
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="statusbar_misc"
+        android:title="@string/misc_category_title">
+
+        <!-- Statusbar custom start padding switch -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="use_custom_statusbar_padding_start"
+            android:title="@string/use_statusbar_custom_start_padding_title"
+            android:summary="@string/use_statusbar_custom_start_padding_summary"
+            android:defaultValue="false" />
+
+       	<!-- Statusbar custom start padding -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="custom_statusbar_padding_start"
+            android:title="@string/statusbar_custom_start_padding_title"
+            android:max="35"
+            settings:min="1"
+            settings:interval="1"
+            settings:units="dp"
+            android:defaultValue="4"
+            android:dependency="use_custom_statusbar_padding_start" />
+
+       	<!-- Statusbar custom end padding switch -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="use_custom_statusbar_padding_end"
+            android:title="@string/use_statusbar_custom_end_padding_title"
+            android:summary="@string/use_statusbar_custom_end_padding_summary"
+            android:defaultValue="false" />
+
+       	<!-- Statusbar custom end padding -->
+       	<com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="custom_statusbar_padding_end"
+            android:title="@string/statusbar_custom_end_padding_title"
+            android:max="25"
+            settings:min="1"
+            settings:interval="1"
+            settings:units="dp"
+            android:defaultValue="4"
+            android:dependency="use_custom_statusbar_padding_end" />
+
+        <!-- Statusbar custom height switch -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="use_custom_statusbar_height"
+            android:title="@string/use_statusbar_custom_height_title"
+            android:summary="@string/use_statusbar_custom_height_summary"
+            android:defaultValue="false" />
+
+        <!-- Statusbar custom height -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="custom_statusbar_height"
+            android:title="@string/statusbar_custom_height_title"
+            android:max="200"
+            settings:min="1"
+            settings:interval="1"
+            settings:units="dp"
+            android:defaultValue="24"
+            android:dependency="use_custom_statusbar_height" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

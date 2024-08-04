@@ -62,6 +62,7 @@
     <string name="navbar_category_title">Navbar</string>
     <string name="theme_category_title">Theme</string>
     <string name="settings_category_title">Settings</string>
+    <string name="misc_category_title">Misc</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -449,5 +450,16 @@
     <string name="battery_bar_high_color">High level color"</string>
     <string name="battery_bar_low_color">Low level color"</string>
     <string name="battery_bar_animate_color">Charging animation color</string>
+
+    <!-- Statusbar custom padding & height -->
+    <string name="use_statusbar_custom_start_padding_title">Start padding</string>
+    <string name="use_statusbar_custom_start_padding_summary">Enabling this will allow user to set custom start padding</string>
+    <string name="statusbar_custom_start_padding_title">Custom start padding</string>    
+    <string name="use_statusbar_custom_end_padding_title">End padding</string>
+    <string name="use_statusbar_custom_end_padding_summary">Enabling this will allow user to set custom end padding</string>
+    <string name="statusbar_custom_end_padding_title">Custom end padding</string>
+    <string name="use_statusbar_custom_height_title">Height</string>
+    <string name="use_statusbar_custom_height_summary">Enabling this will allow user to set custom height</string> 
+    <string name="statusbar_custom_height_title">Custom height</string>
 
 </resources>
