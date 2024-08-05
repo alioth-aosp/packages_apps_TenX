@@ -191,6 +191,13 @@
         android:key="statusbar_misc"
         android:title="@string/misc_category_title">
 
+        <!-- Dual statusbar row mod -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="use_dual_statusbar_mod"
+            android:title="@string/use_statusbar_dual_row_mod_title"
+            android:summary="@string/use_statusbar_dual_row_mod_summary"
+            android:defaultValue="false" />
+
         <!-- Statusbar custom start padding switch -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="use_custom_statusbar_padding_start"

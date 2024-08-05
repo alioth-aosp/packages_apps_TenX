@@ -462,4 +462,8 @@
     <string name="use_statusbar_custom_height_summary">Enabling this will allow user to set custom height</string> 
     <string name="statusbar_custom_height_title">Custom height</string>
 
+    <!-- Dual row statusbar mod -->
+    <string name="use_statusbar_dual_row_mod_title">Dual row</string>
+    <string name="use_statusbar_dual_row_mod_summary">Enables dual row in the statusbar</string>
+
 </resources>
