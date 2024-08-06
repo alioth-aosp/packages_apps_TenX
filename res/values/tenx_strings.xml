@@ -466,4 +466,8 @@
     <string name="use_statusbar_dual_row_mod_title">Dual row</string>
     <string name="use_statusbar_dual_row_mod_summary">Enables dual row in the statusbar</string>
 
+    <!-- QS Data Usage -->
+    <string name="qs_data_usage_panel_title">Data usage panel</string>
+    <string name="qs_data_usage_panel_summary">Display a dialog with data usage details on expanded qs panel</string>
+
 </resources>

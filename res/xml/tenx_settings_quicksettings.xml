@@ -128,6 +128,13 @@
             android:title="@string/quick_settings_data_usage_icon_title"
             android:summary="@string/quick_settings_data_usage_icon_summary"
             android:defaultValue="false" />
+ 
+        <!-- Data usage panel -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="qs_data_usage_panel"
+            android:title="@string/qs_data_usage_panel_title"
+            android:summary="@string/qs_data_usage_panel_summary"
+            android:defaultValue="false" />
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
