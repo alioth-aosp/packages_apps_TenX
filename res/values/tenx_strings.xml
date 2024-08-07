@@ -470,4 +470,8 @@
     <string name="qs_data_usage_panel_title">Data usage panel</string>
     <string name="qs_data_usage_panel_summary">Display a dialog with data usage details on expanded qs panel</string>
 
+    <!-- QS system info -->
+    <string name="qs_system_info_title">System info</string>
+    <string name="qs_system_info_summary">Show system info on expanded qs panel</string>
+
 </resources>
