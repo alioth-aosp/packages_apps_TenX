@@ -31,6 +31,13 @@
             android:summary="@string/three_finger_gesture_summary"
             android:defaultValue="false" />
 
+        <!-- Hide developer status -->
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="com.tenx.settings.fragments.HideDeveloperStatusSettings" />
+
         <!-- Hide screen capture status -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="hide_screen_capture_status"
