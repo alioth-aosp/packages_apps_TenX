@@ -44,10 +44,13 @@ import java.util.Date;
 import java.util.List;
 
 import lineageos.preference.LineageSystemSettingListPreference;
+import lineageos.preference.LineageSystemSettingSwitchPreference;
 import lineageos.providers.LineageSettings;
 
 import com.tenx.support.preferences.CustomSeekBarPreference;
 import com.tenx.support.preferences.SystemSettingListPreference;
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.tenx.support.preferences.SystemSettingSeekBarPreference;
 import com.tenx.settings.utils.DeviceUtils;
 
 @SearchIndexable
@@ -57,6 +60,10 @@ public class Clock extends SettingsPreferenceFragment implements
     private static final String TAG = "Clock";
 
     private static final String STATUS_BAR_CLOCK_POSITION = "status_bar_clock";
+    private static final String STATUS_BAR_CLOCK_AUTO_HIDE = "status_bar_clock_auto_hide";
+    private static final String STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION = "status_bar_clock_auto_hide_hduration";
+    private static final String STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION = "status_bar_clock_auto_hide_sduration";
+    private static final String STATUS_BAR_CLOCK_SECONDS = "status_bar_clock_seconds";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String CLOCK_DATE_DISPLAY = "status_bar_clock_date_display";
     private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
@@ -68,6 +75,10 @@ public class Clock extends SettingsPreferenceFragment implements
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
     private LineageSystemSettingListPreference mClockPosition;
+    private SystemSettingSwitchPreference mAutoHide;
+    private SystemSettingSeekBarPreference mAutoHideHDuration;
+    private SystemSettingSeekBarPreference mAutoHideSDuration;
+    private SystemSettingSwitchPreference mShowSeconds;
     private LineageSystemSettingListPreference mStatusBarAmPm;
     private SystemSettingListPreference mClockDateDisplay;
     private SystemSettingListPreference mClockDatePosition;
@@ -128,6 +139,13 @@ public class Clock extends SettingsPreferenceFragment implements
         parseClockDateFormats();
         mClockDateFormat.setEnabled(dateDisplay > 0);
         mClockDateFormat.setOnPreferenceChangeListener(this);
+
+        mAutoHide = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_AUTO_HIDE);
+        mAutoHideHDuration = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION);
+        mAutoHideSDuration = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION);
+        mShowSeconds = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
+
+        setLayoutToPreference();
     }
 
     @Override
@@ -229,6 +247,19 @@ public class Clock extends SettingsPreferenceFragment implements
             }
         }
         mClockDateFormat.setEntries(parsedDateEntries);
+    }
+
+    private void setLayoutToPreference() {
+        mClockPosition.setLayoutResource(R.layout.tenx_preference_top);
+        mAutoHide.setLayoutResource(R.layout.tenx_preference_middle);
+        mAutoHideHDuration.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mAutoHideSDuration.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mShowSeconds.setLayoutResource(R.layout.tenx_preference_middle);
+        mStatusBarAmPm.setLayoutResource(R.layout.tenx_preference_middle);
+        mClockDateDisplay.setLayoutResource(R.layout.tenx_preference_middle);
+        mClockDatePosition.setLayoutResource(R.layout.tenx_preference_middle);
+        mClockDateStyle.setLayoutResource(R.layout.tenx_preference_middle);
+        mClockDateFormat.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

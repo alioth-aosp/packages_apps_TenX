@@ -166,6 +166,9 @@
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
     <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="status_bar_gestures_category"
         android:title="@string/status_bar_gestures_category_title">
@@ -186,6 +189,9 @@
             android:defaultValue="0" />
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="statusbar_misc"

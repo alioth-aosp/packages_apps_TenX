@@ -69,6 +69,8 @@ public class Animations extends SettingsPreferenceFragment
         int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateTileAnimStyle(tileAnimationStyle);
+
+        setLayoutToPreference();
     }
 
     @Override
@@ -84,6 +86,12 @@ public class Animations extends SettingsPreferenceFragment
     private void updateTileAnimStyle(int tileAnimationStyle) {
         mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
+    }
+
+    private void setLayoutToPreference() {
+        mTileAnimationStyle.setLayoutResource(R.layout.tenx_preference_top);
+        mTileAnimationDuration.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mTileAnimationInterpolator.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

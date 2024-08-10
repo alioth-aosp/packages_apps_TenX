@@ -33,15 +33,27 @@ public class UserInterface extends SettingsPreferenceFragment
 
     public static final String TAG = "UserInterface";
 
+    private static final String KEY_MONET = "monet_settings";
+
+    private Preference mMonet;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_ui);
+
+        mMonet = (Preference) findPreference(KEY_MONET);
+
+        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mMonet.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override

@@ -35,13 +35,43 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.tenx.support.colorpicker.ColorPickerPreference;
 import com.tenx.support.preferences.CustomSeekBarPreference;
+import com.tenx.support.preferences.SystemSettingSeekBarPreference;
+import com.tenx.support.preferences.SystemSettingListPreference;
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.tenx.support.colorpicker.ColorPickerSystemPreference;
 
 public class BatteryBar extends SettingsPreferenceFragment
             implements Preference.OnPreferenceChangeListener  {
 
     private static final String PREF_BATT_BAR = "statusbar_battery_bar";
+    private static final String KEY_THICKNESS = "statusbar_battery_bar_thickness";
+    private static final String KEY_STYLE = "statusbar_battery_bar_style";
+    private static final String KEY_BLEND = "statusbar_battery_bar_blend_color";
+    private static final String KEY_BLEND_REVERSE = "statusbar_battery_bar_blend_color_reverse";
+    private static final String KEY_COLOR = "statusbar_battery_bar_color";
+    private static final String KEY_LOW_COLOR_WARNING = "statusbar_battery_bar_battery_low_color_warning";
+    private static final String KEY_ANIMATE = "statusbar_battery_bar_animate";
+    private static final String KEY_ANIMATE_COLOR = "statusbar_battery_bar_animate_color";
+    private static final String KEY_CHARGING_COLOR_ENABLE = "statusbar_battery_bar_enable_charging_color";
+    private static final String KEY_CHARGING_COLOR = "statusbar_battery_bar_charging_color";
+    private static final String KEY_GRADIENT_COLOR = "statusbar_battery_bar_use_gradient_color";
+    private static final String KEY_LOW_COLOR = "statusbar_battery_bar_low_color";
+    private static final String KEY_HIGH_COLOR = "statusbar_battery_bar_high_color";
 
     private SwitchPreferenceCompat mBatteryBar;
+    private SystemSettingSeekBarPreference mThickness;
+    private SystemSettingListPreference mStyle;
+    private SystemSettingSwitchPreference mBlendColor;
+    private SystemSettingSwitchPreference mBlendColorReverse;
+    private ColorPickerSystemPreference mColor;
+    private ColorPickerSystemPreference mLowWarningColor;
+    private SystemSettingSwitchPreference mAnimate;
+    private ColorPickerSystemPreference mAnimateColor;
+    private SystemSettingSwitchPreference mChargingColorEnable;
+    private ColorPickerSystemPreference mChargingColor;
+    private SystemSettingSwitchPreference mGradientColor;
+    private ColorPickerSystemPreference mLowColor;
+    private ColorPickerSystemPreference mHighColor;
 
     private boolean mIsBarSwitchingMode = false;
     private Handler mHandler;
@@ -59,12 +89,28 @@ public class BatteryBar extends SettingsPreferenceFragment
         String hexColor;
 
         mBatteryBar = (SwitchPreferenceCompat) findPreference(PREF_BATT_BAR);
+        mThickness = (SystemSettingSeekBarPreference) findPreference(KEY_THICKNESS);
+        mStyle = (SystemSettingListPreference) findPreference(KEY_STYLE);
+        mBlendColor = (SystemSettingSwitchPreference) findPreference(KEY_BLEND);
+        mBlendColorReverse = (SystemSettingSwitchPreference) findPreference(KEY_BLEND_REVERSE);
+        mColor = (ColorPickerSystemPreference) findPreference(KEY_COLOR);
+        mLowWarningColor = (ColorPickerSystemPreference) findPreference(KEY_LOW_COLOR_WARNING);
+        mAnimate = (SystemSettingSwitchPreference) findPreference(KEY_ANIMATE);
+        mAnimateColor = (ColorPickerSystemPreference) findPreference(KEY_ANIMATE_COLOR);
+        mChargingColorEnable = (SystemSettingSwitchPreference) findPreference(KEY_CHARGING_COLOR_ENABLE);
+        mChargingColor = (ColorPickerSystemPreference) findPreference(KEY_CHARGING_COLOR);
+        mGradientColor = (SystemSettingSwitchPreference) findPreference(KEY_GRADIENT_COLOR);
+        mLowColor = (ColorPickerSystemPreference) findPreference(KEY_LOW_COLOR);
+        mHighColor = (ColorPickerSystemPreference) findPreference(KEY_HIGH_COLOR);
+
         mHandler = new Handler();
 
         boolean showing = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR, 0, UserHandle.USER_CURRENT) != 0;
         mBatteryBar.setChecked(showing);
         mBatteryBar.setOnPreferenceChangeListener(this);
+
+        setLayoutToPreference();
     }
 
     @Override
@@ -90,6 +136,23 @@ public class BatteryBar extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mBatteryBar.setLayoutResource(R.layout.tenx_preference_top);
+        mThickness.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mStyle.setLayoutResource(R.layout.tenx_preference_middle);
+        mBlendColor.setLayoutResource(R.layout.tenx_preference_middle);
+        mBlendColorReverse.setLayoutResource(R.layout.tenx_preference_middle);
+        mColor.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mLowWarningColor.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mAnimate.setLayoutResource(R.layout.tenx_preference_middle);
+        mAnimateColor.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mChargingColorEnable.setLayoutResource(R.layout.tenx_preference_middle);
+        mChargingColor.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mGradientColor.setLayoutResource(R.layout.tenx_preference_middle);
+        mLowColor.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mHighColor.setLayoutResource(R.layout.tenx_preference_colorpicker_bottom);
     }
 
     @Override

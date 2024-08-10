@@ -39,6 +39,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 
+import com.tenx.support.preferences.SystemSettingListPreference;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
 import com.tenx.support.preferences.SystemSettingSeekBarPreference;
 import com.tenx.support.colorpicker.ColorPickerPreference;
@@ -55,14 +56,26 @@ public class Dashboard extends DashboardFragment implements
     public static final String TAG = "Dashboard";
 
     private static final String SETTINGS_DASHBOARD_BACKGROUND_SHOWN = "settings_dashboard_background_shown";
+    private static final String SETTINGS_DASHBOARD_BACKGROUND_STYLE = "settings_dashboard_background_style";
+    private static final String SETTINGS_DASHBOARD_BACKGROUND_SIZE = "settings_dashboard_background_size";
     private static final String SETTINGS_DASHBOARD_BACKGROUND_COLOR = "settings_dashboard_background_color";
     private static final String SETTINGS_DASHBOARD_BACKGROUND_STROKE_WIDTH = "settings_dashboard_background_stroke_width";
     private static final String SETTINGS_DASHBOARD_BACKGROUND_GRADIENT_START = "settings_dashboard_background_gradient_start_color";
     private static final String SETTINGS_DASHBOARD_BACKGROUND_GRADIENT_END = "settings_dashboard_background_gradient_end_color";
+    private static final String SETTINGS_DASHBOARD_BACKGROUND_ARROW = "settings_dashboard_background_arrow";
+    private static final String SETTINGS_DASHBOARD_ARROW_COLOR = "settings_dashboard_arrow_color";
+    private static final String SETTINGS_DASHBOARD_ICON_COLOR = "settings_dashboard_icon_color";
+    private static final String SETTINGS_DASHBOARD_ICON_STYLE = "settings_dashboard_icon_styles";
 
     private SystemSettingSwitchPreference mSettingsDashboardBackgroundShown;
+    private SystemSettingListPreference mStyle;
+    private SystemSettingSeekBarPreference mSize;
     private SystemSettingSwitchPreference mSettingsDashboardBackgroundColor;
     private SystemSettingSeekBarPreference mSettingsDashboardBackgroundStrokeWidth;
+    private SystemSettingListPreference mArrow;
+    private SystemSettingListPreference mArrowColor;
+    private SystemSettingListPreference mIconColor;
+    private SystemSettingListPreference mIconStyle;
 
     private ColorPickerPreference mSettingsDashboardBackgroundGradientStart;
     private ColorPickerPreference mSettingsDashboardBackgroundGradientEnd;
@@ -82,11 +95,19 @@ public class Dashboard extends DashboardFragment implements
         super.onCreate(savedInstanceState);
 
         mSettingsDashboardBackgroundShown = (SystemSettingSwitchPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_SHOWN);
+        mStyle = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_STYLE);
+        mSize = (SystemSettingSeekBarPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_SIZE);
         mSettingsDashboardBackgroundColor = (SystemSettingSwitchPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_COLOR);
         mSettingsDashboardBackgroundStrokeWidth = (SystemSettingSeekBarPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_STROKE_WIDTH);
+        mArrow = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_ARROW);
+        mArrowColor = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_ARROW_COLOR);
+        mIconColor = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_ICON_COLOR);
+        mIconStyle = (SystemSettingListPreference) findPreference(SETTINGS_DASHBOARD_ICON_STYLE);
 
         mSettingsDashboardBackgroundGradientStart = (ColorPickerPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_GRADIENT_START);
         mSettingsDashboardBackgroundGradientEnd = (ColorPickerPreference) findPreference(SETTINGS_DASHBOARD_BACKGROUND_GRADIENT_END);
+
+        setLayoutToPreference();
     }
 
     @Override
@@ -117,6 +138,20 @@ public class Dashboard extends DashboardFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mSettingsDashboardBackgroundShown.setLayoutResource(R.layout.tenx_preference_top);
+        mStyle.setLayoutResource(R.layout.tenx_preference_middle);
+        mSize.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mSettingsDashboardBackgroundGradientStart.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mSettingsDashboardBackgroundGradientEnd.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mSettingsDashboardBackgroundColor.setLayoutResource(R.layout.tenx_preference_middle);
+        mSettingsDashboardBackgroundStrokeWidth.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mArrow.setLayoutResource(R.layout.tenx_preference_middle);
+        mArrowColor.setLayoutResource(R.layout.tenx_preference_middle);
+        mIconColor.setLayoutResource(R.layout.tenx_preference_middle);
+        mIconStyle.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

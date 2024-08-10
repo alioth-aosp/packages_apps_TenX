@@ -116,6 +116,7 @@ public class MonetSettings extends DashboardFragment implements
         mChromaPref.setOnPreferenceChangeListener(this);
         mTintBackgroundPref.setOnPreferenceChangeListener(this);
 
+        setLayoutToPreference();
     }
 
     @Override
@@ -346,6 +347,17 @@ public class MonetSettings extends DashboardFragment implements
             else object.putOpt(OVERLAY_TINT_BACKGROUND, 1);
             putSettingsJson(object);
         } catch (JSONException | IllegalArgumentException ignored) {}
+    }
+
+    private void setLayoutToPreference() {
+        mThemeStylePref.setLayoutResource(R.layout.tenx_preference_top);
+        mColorSourcePref.setLayoutResource(R.layout.tenx_preference_middle);
+        mAccentColorPref.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mAccentBackgroundPref.setLayoutResource(R.layout.tenx_preference_middle);
+        mBgColorPref.setLayoutResource(R.layout.tenx_preference_colorpicker_middle);
+        mLuminancePref.setLayoutResource(R.layout.tenx_preference_custom_seekbar_middle);
+        mChromaPref.setLayoutResource(R.layout.tenx_preference_custom_seekbar_middle);
+        mTintBackgroundPref.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
