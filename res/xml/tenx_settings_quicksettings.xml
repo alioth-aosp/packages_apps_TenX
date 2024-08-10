@@ -143,6 +143,27 @@
             android:summary="@string/qs_system_info_summary"
             android:defaultValue="false" />
 
+        <!-- Quick QS settings -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="quick_qs_show_settings"
+            android:title="@string/quick_qs_panel_settings_title"
+            android:summary="@string/quick_qs_panel_settings_summary"
+            android:defaultValue="false" />
+
+       	<!-- Quick QS TenX text -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="quick_qs_show_tenx_text"
+            android:title="@string/quick_qs_panel_tenx_text_title"
+            android:summary="@string/quick_qs_panel_tenx_text_summary"
+            android:defaultValue="false" />
+
+        <!-- Quick QS view -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="quick_qs_show_view"
+            android:title="@string/quick_qs_panel_view_title"
+            android:summary="@string/quick_qs_panel_view_summary"
+            android:defaultValue="false" />
+
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
     <com.tenx.settings.preferences.TenXPreferenceCategory

@@ -474,4 +474,11 @@
     <string name="qs_system_info_title">System info</string>
     <string name="qs_system_info_summary">Show system info on expanded qs panel</string>
 
+    <!-- Quick QS panel items -->
+    <string name="quick_qs_panel_settings_title">Quick QS Settings</string>
+    <string name="quick_qs_panel_settings_summary">Show settings button in quick qs panel</string>
+    <string name="quick_qs_panel_tenx_text_title">Quick QS Text</string>
+    <string name="quick_qs_panel_tenx_text_summary">Show TenX text in quick qs panel</string>
+    <string name="quick_qs_panel_view_title">Quick QS View</string>
+    <string name="quick_qs_panel_view_summary">Show a view below quick qs panel</string>
 </resources>
