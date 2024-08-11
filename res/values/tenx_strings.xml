@@ -365,6 +365,8 @@
     <string name="chroma_factor_summary">Higher values produce stronger colors</string>
     <string name="tint_background_title">Tint Background</string>
     <string name="tint_background_summary">Make Luminance and Chroma selection affect background colors as well</string>
+    <string name="secondary_color_title">Secondary color</string>
+    <string name="secondary_color_summary">Override secondary (accent3) colors</string>
 
     <!-- Settings dashboard customisations -->
     <string name="settings_dashboard_background_shown_title">Background</string>

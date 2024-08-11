@@ -45,6 +45,11 @@
         android:title="@string/bg_color_title"
         android:summary="@string/bg_color_summary" />
 
+    <com.tenx.support.colorpicker.ColorPickerPreference
+        android:key="secondary_color"
+        android:title="@string/secondary_color_title"
+        android:summary="@string/secondary_color_summary" />
+
     <com.tenx.support.preferences.CustomSeekBarPreference
         android:key="luminance_factor"
         android:title="@string/luminance_factor_title"
