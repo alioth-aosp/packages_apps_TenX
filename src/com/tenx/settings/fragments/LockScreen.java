@@ -27,6 +27,7 @@ import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.tenx.OmniJawsClient;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -37,8 +38,18 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_lockscreen";
+    private static final String KEY_WEATHER_PREFERENCE = "weather_preference";
+    private static final String KEY_WEATHER_ENABLED = "lockscreen_weather_enabled";
+    private static final String KEY_WEATHER_LOCATION = "lockscreen_weather_location";
+    private static final String KEY_WEATHER_TEXT = "lockscreen_weather_text";
 
     private SystemSettingSwitchPreference mDoubleTapToSleep;
+    private Preference mWeatherPreference;
+    private SystemSettingSwitchPreference mWeatherEnabled;
+    private SystemSettingSwitchPreference mWeatherLocation;
+    private SystemSettingSwitchPreference mWeatherText;
+
+    private OmniJawsClient mWeatherClient;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -48,6 +59,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Resources resources = getResources();
 
         mDoubleTapToSleep = (SystemSettingSwitchPreference) findPreference(KEY_DOUBLE_TAP_TO_SLEEP);
+        mWeatherPreference = (Preference) findPreference(KEY_WEATHER_PREFERENCE);
+        mWeatherEnabled = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_ENABLED);
+        mWeatherLocation = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_LOCATION);
+        mWeatherText = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_TEXT);
+
+        mWeatherClient = new OmniJawsClient(getContext());
+        updateWeatherSettings();
 
         setLayoutToPreference();
     }
@@ -58,6 +76,25 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private void setLayoutToPreference() {
         mDoubleTapToSleep.setLayoutResource(R.layout.tenx_preference);
+        mWeatherPreference.setLayoutResource(R.layout.tenx_preference_top);
+        mWeatherEnabled.setLayoutResource(R.layout.tenx_preference_middle);
+        mWeatherLocation.setLayoutResource(R.layout.tenx_preference_middle);
+        mWeatherText.setLayoutResource(R.layout.tenx_preference_bottom);
+    }
+
+    private void updateWeatherSettings() {
+        if (mWeatherClient == null || mWeatherEnabled == null) return;
+
+        boolean weatherEnabled = mWeatherClient.isOmniJawsEnabled();
+        mWeatherEnabled.setEnabled(weatherEnabled);
+        mWeatherEnabled.setSummary(weatherEnabled ? R.string.lockscreen_weather_summary :
+            R.string.lockscreen_weather_enabled_info);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateWeatherSettings();
     }
 
     @Override

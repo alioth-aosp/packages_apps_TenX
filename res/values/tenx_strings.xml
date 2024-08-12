@@ -65,6 +65,7 @@
     <string name="misc_category_title">Misc</string>
     <string name="gestures_all_category_title">Gestures</string>
     <string name="header_category_title">Header</string>
+    <string name="lockscreen_weather_category_title">Weather</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -536,4 +537,16 @@
     <!-- QS Bluetooth auto on -->
     <string name="qs_bt_auto_on_title">Automatic Bluetooth on</string>
     <string name="qs_bt_auto_on_summary">Always turn on Bluetooth when pressing the Bluetooth QS tile</string>
+
+    <!-- Lockscreen weather -->
+    <string name="weather_settings_title">Settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_category">Weather</string>
+    <string name="lockscreen_weather_title">Weather update</string>
+    <string name="lockscreen_weather_summary">Display current weather update</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Current location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="lockscreen_weather_text_title">Current condition</string>
+    <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
 </resources>
