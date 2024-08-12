@@ -69,6 +69,7 @@ public class Clock extends SettingsPreferenceFragment implements
     private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
     private static final String CLOCK_DATE_STYLE = "status_bar_clock_date_style";
     private static final String CLOCK_DATE_FORMAT = "status_bar_clock_date_format";
+    private static final String CLOCK_CHIP = "statusbar_clock_chip";
 
     private static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -84,6 +85,7 @@ public class Clock extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mClockDatePosition;
     private SystemSettingListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
+    private SystemSettingSwitchPreference mChip;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -144,6 +146,7 @@ public class Clock extends SettingsPreferenceFragment implements
         mAutoHideHDuration = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION);
         mAutoHideSDuration = (SystemSettingSeekBarPreference) findPreference(STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION);
         mShowSeconds = (SystemSettingSwitchPreference) findPreference(STATUS_BAR_CLOCK_SECONDS);
+        mChip = (SystemSettingSwitchPreference) findPreference(CLOCK_CHIP);
 
         setLayoutToPreference();
     }
@@ -251,6 +254,7 @@ public class Clock extends SettingsPreferenceFragment implements
 
     private void setLayoutToPreference() {
         mClockPosition.setLayoutResource(R.layout.tenx_preference_top);
+        mChip.setLayoutResource(R.layout.tenx_preference_middle);
         mAutoHide.setLayoutResource(R.layout.tenx_preference_middle);
         mAutoHideHDuration.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
         mAutoHideSDuration.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
