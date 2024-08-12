@@ -46,6 +46,22 @@
         android:layout="@layout/tenx_divider" />
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="quick_settings_header_category"
+        android:title="@string/header_category_title">
+
+        <!-- QS headers -->
+        <Preference
+            android:key="category_custom_header"
+            android:fragment="com.tenx.settings.fragments.qs.QsHeaderImageSettings"
+            android:title="@string/qs_header_image_title"
+            android:summary="@string/qs_header_image_summary" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="quick_settings_lock_screen_category"
         android:title="@string/quick_settings_lock_screen_category_title">
 
