@@ -47,6 +47,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_NETWORK_TRAFFIC = "network_traffic_settings";
     private static final String KEY_BATTERY_BAR = "batterybar";
     private static final String KEY_DATA_DISABLED_ICON = "data_disabled_icon";
+    private static final String KEY_ROAMING_INDICATOR_ICON = "roaming_indicator_icon";
     private static final String KEY_FOUR_G_ICON = "show_fourg_icon";
     private static final String KEY_WIFI_STANDARD_ICON = "wifi_standard_icon";
     private static final String KEY_BATTERY_STYLE = "status_bar_battery_style";
@@ -87,6 +88,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private Preference mBatteryBar;
     private SystemSettingSwitchPreference mDataDisabledIcon;
     private SystemSettingSwitchPreference mFourGIcon;
+    private SystemSettingSwitchPreference mRoamingIndicatorIcon;
     private SystemSettingSwitchPreference mWiFiStandardIcon;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
@@ -127,6 +129,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mNetworkTraffic = (Preference) findPreference(KEY_NETWORK_TRAFFIC);
         mBatteryBar = (Preference) findPreference(KEY_BATTERY_BAR);
         mDataDisabledIcon = (SystemSettingSwitchPreference) findPreference(KEY_DATA_DISABLED_ICON);
+        mRoamingIndicatorIcon = (SystemSettingSwitchPreference) findPreference(KEY_ROAMING_INDICATOR_ICON);
         mFourGIcon = (SystemSettingSwitchPreference) findPreference(KEY_FOUR_G_ICON);
         mWiFiStandardIcon = (SystemSettingSwitchPreference) findPreference(KEY_WIFI_STANDARD_ICON);
         mBatteryStyle = (SystemSettingListPreference) findPreference(KEY_BATTERY_STYLE);
@@ -279,6 +282,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mBatteryBar.setLayoutResource(R.layout.tenx_preference_middle);
         mDataDisabledIcon.setLayoutResource(R.layout.tenx_preference_middle);
         mFourGIcon.setLayoutResource(R.layout.tenx_preference_middle);
+        mRoamingIndicatorIcon.setLayoutResource(R.layout.tenx_preference_middle);
         mWiFiStandardIcon.setLayoutResource(R.layout.tenx_preference_middle);
         mBatteryStyle.setLayoutResource(R.layout.tenx_preference_middle);
         mBatteryPercent.setLayoutResource(R.layout.tenx_preference_middle);

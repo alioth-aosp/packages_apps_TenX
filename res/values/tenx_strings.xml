@@ -498,4 +498,8 @@
     <!-- Tap to sleep on lock screen -->
     <string name="lockscreen_doubletap_sleep_title">Tap to sleep</string>
     <string name="lockscreen_doubletap_sleep_summary">Double-tap on the lock screen to put device asleep</string>
+
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Roaming indicator</string>
+    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
 </resources>
