@@ -66,6 +66,7 @@
     <string name="gestures_all_category_title">Gestures</string>
     <string name="header_category_title">Header</string>
     <string name="lockscreen_weather_category_title">Weather</string>
+    <string name="battery_category_title">Battery</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -549,4 +550,8 @@
     <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <string name="lockscreen_weather_text_title">Current condition</string>
     <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
+
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">Info</string>
+    <string name="lockscreen_battery_info_summary">Display battery info when charging</string>
 </resources>

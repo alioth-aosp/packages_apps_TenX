@@ -42,12 +42,14 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_WEATHER_ENABLED = "lockscreen_weather_enabled";
     private static final String KEY_WEATHER_LOCATION = "lockscreen_weather_location";
     private static final String KEY_WEATHER_TEXT = "lockscreen_weather_text";
+    private static final String KEY_BATTERY_INFO = "lockscreen_battery_info";
 
     private SystemSettingSwitchPreference mDoubleTapToSleep;
     private Preference mWeatherPreference;
     private SystemSettingSwitchPreference mWeatherEnabled;
     private SystemSettingSwitchPreference mWeatherLocation;
     private SystemSettingSwitchPreference mWeatherText;
+    private SystemSettingSwitchPreference mBatteryInfo;
 
     private OmniJawsClient mWeatherClient;
 
@@ -63,6 +65,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mWeatherEnabled = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_ENABLED);
         mWeatherLocation = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_LOCATION);
         mWeatherText = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_TEXT);
+        mBatteryInfo = (SystemSettingSwitchPreference) findPreference(KEY_BATTERY_INFO);
 
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
@@ -80,6 +83,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mWeatherEnabled.setLayoutResource(R.layout.tenx_preference_middle);
         mWeatherLocation.setLayoutResource(R.layout.tenx_preference_middle);
         mWeatherText.setLayoutResource(R.layout.tenx_preference_bottom);
+        mBatteryInfo.setLayoutResource(R.layout.tenx_preference);
     }
 
     private void updateWeatherSettings() {
