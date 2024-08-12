@@ -70,6 +70,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String KEY_COLUMNS_LANDSCAPE = "qs_layout_columns_landscape";
     private static final String KEY_QUICK_QS_ROWS_PORTRAIT = "qqs_layout_rows";
     private static final String KEY_QUICK_QS_ROWS_LANDSCAPE = "qqs_layout_rows_landscape";
+    private static final String KEY_QS_TRANSPARENCY = "qs_transparency";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -105,6 +106,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingSeekBarPreference mColumnsLandscape;
     private SystemSettingSeekBarPreference mQuickQsRowsPortrait;
     private SystemSettingSeekBarPreference mQuickQsRowsLandscape;
+    private SystemSettingSeekBarPreference mQsTransparency;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -144,6 +146,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         mColumnsLandscape = (SystemSettingSeekBarPreference) findPreference(KEY_COLUMNS_LANDSCAPE);
         mQuickQsRowsPortrait = (SystemSettingSeekBarPreference) findPreference(KEY_QUICK_QS_ROWS_PORTRAIT);
         mQuickQsRowsLandscape = (SystemSettingSeekBarPreference) findPreference(KEY_QUICK_QS_ROWS_LANDSCAPE);
+        mQsTransparency = (SystemSettingSeekBarPreference) findPreference(KEY_QS_TRANSPARENCY);
 
         int batterystyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -171,7 +174,8 @@ public class QuickSettings extends SettingsPreferenceFragment
         mBatteryStyle.setLayoutResource(R.layout.tenx_preference_top);
         mBatteryPercent.setLayoutResource(R.layout.tenx_preference_bottom);
         mDisableQsInLockscreen.setLayoutResource(R.layout.tenx_preference);
-        mNotifDismiss.setLayoutResource(R.layout.tenx_preference_top);
+        mQsTransparency.setLayoutResource(R.layout.tenx_preference_seekbar_top);
+        mNotifDismiss.setLayoutResource(R.layout.tenx_preference_middle);
         mNotifDismissBackground.setLayoutResource(R.layout.tenx_preference_middle);
         mNotifDismissIcon.setLayoutResource(R.layout.tenx_preference_middle);
         mShowBrightnessSlider.setLayoutResource(R.layout.tenx_preference_middle);

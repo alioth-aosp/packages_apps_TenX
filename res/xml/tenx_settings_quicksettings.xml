@@ -65,6 +65,17 @@
         android:key="qs_panel"
         android:title="@string/quick_settings_panel_category_title">
 
+        <!-- QS panel transparency -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="qs_transparency"
+            android:title="@string/qs_transparency_title"
+            android:summary="@string/qs_transparency_summary"
+            android:defaultValue="100"
+            settings:interval="1"
+            settings:units="%"
+            android:max="100"
+            android:min="1" />
+
         <!-- Floating clear all -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"
