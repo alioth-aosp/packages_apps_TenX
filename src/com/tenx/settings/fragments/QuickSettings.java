@@ -73,6 +73,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String KEY_QS_TRANSPARENCY = "qs_transparency";
     private static final String KEY_QS_DUAL_TONE = "qs_dual_tone";
     private static final String KEY_HEADER_IMAGE = "category_custom_header";
+    private static final String KEY_QS_BT_AUTO_ON = "qs_bt_auto_on";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -111,6 +112,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingSeekBarPreference mQsTransparency;
     private SystemSettingSwitchPreference mQsDualTone;
     private Preference mHeaderImage;
+    private SystemSettingSwitchPreference mQsBtAutoOn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -153,6 +155,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsTransparency = (SystemSettingSeekBarPreference) findPreference(KEY_QS_TRANSPARENCY);
         mQsDualTone = (SystemSettingSwitchPreference) findPreference(KEY_QS_DUAL_TONE);
         mHeaderImage = (Preference) findPreference(KEY_HEADER_IMAGE);
+        mQsBtAutoOn = (SystemSettingSwitchPreference) findPreference(KEY_QS_BT_AUTO_ON);
 
         int batterystyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -210,6 +213,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQuickQsRowsPortrait.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
         mQuickQsRowsLandscape.setLayoutResource(R.layout.tenx_preference_seekbar_bottom);
         mHeaderImage.setLayoutResource(R.layout.tenx_preference);
+        mQsBtAutoOn.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     @Override

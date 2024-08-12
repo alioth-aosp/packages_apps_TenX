@@ -532,4 +532,8 @@
     <string name="qs_header_needs_gallery">You must install a gallery app!</string>
     <string name="qs_header_offset_title">Header image offset</string>
     <string name="qs_header_offset_summary">Adjust the image header size</string>
+
+    <!-- QS Bluetooth auto on -->
+    <string name="qs_bt_auto_on_title">Automatic Bluetooth on</string>
+    <string name="qs_bt_auto_on_summary">Always turn on Bluetooth when pressing the Bluetooth QS tile</string>
 </resources>
