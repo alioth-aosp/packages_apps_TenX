@@ -230,6 +230,14 @@
             android:summary="@string/qs_bt_auto_on_summary"
             android:defaultValue="false" />
 
+        <!-- Legacy qstile styles -->
+        <ListPreference
+            android:key="qs_tile_ui_style"
+            android:title="@string/qs_tile_ui_style_title"
+            android:entries="@array/qs_tile_ui_style_entries"
+            android:entryValues="@array/qs_tile_ui_style_values"
+            android:defaultValue="0" />
+
         <!-- Default qs tile style -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="default_qs_tile_styles"

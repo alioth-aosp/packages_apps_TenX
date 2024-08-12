@@ -558,4 +558,12 @@
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
     <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
+
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_default">Default</string>
+    <string name="qs_tile_ui_style_title">Legacy styles</string>
+    <string name="qs_tile_ui_style_a11_circle">Circle tiles</string>
+    <string name="qs_tile_ui_style_a11_square">Square tiles</string>
+    <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
+
 </resources>

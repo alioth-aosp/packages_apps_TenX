@@ -26,6 +26,7 @@ import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.tenx.ThemeUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -74,6 +75,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String KEY_QS_DUAL_TONE = "qs_dual_tone";
     private static final String KEY_HEADER_IMAGE = "category_custom_header";
     private static final String KEY_QS_BT_AUTO_ON = "qs_bt_auto_on";
+    private static final String KEY_QS_UI_STYLE  = "qs_tile_ui_style";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -113,6 +115,9 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SystemSettingSwitchPreference mQsDualTone;
     private Preference mHeaderImage;
     private SystemSettingSwitchPreference mQsBtAutoOn;
+    private ListPreference mQsUI;
+
+    private static ThemeUtils mThemeUtils;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -121,6 +126,8 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         final Context context = getContext();
         final ContentResolver resolver = context.getContentResolver();
+
+        mThemeUtils = new ThemeUtils(getActivity());
 
         mBatteryStyle = (SystemSettingListPreference) findPreference(KEY_BATTERY_STYLE);
         mBatteryPercent = (SystemSettingListPreference) findPreference(KEY_BATTERY_PERCENT);
@@ -165,15 +172,35 @@ public class QuickSettings extends SettingsPreferenceFragment
         mBatteryPercent.setEnabled(
                 batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
 
+        String isA11Style = Integer.toString(Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT));
+
+        mQsUI = (ListPreference) findPreference(KEY_QS_UI_STYLE);
+        int index = mQsUI.findIndexOfValue(isA11Style);
+        mQsUI.setValue(isA11Style);
+        mQsUI.setSummary(mQsUI.getEntries()[index]);
+        mQsUI.setOnPreferenceChangeListener(this);
+
         setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
         if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             mBatteryPercent.setEnabled(
                     value != BATTERY_STYLE_TEXT && value != BATTERY_STYLE_HIDDEN);
+            return true;
+        } else if (preference == mQsUI) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mQsUI.findIndexOfValue((String) newValue);
+            mQsUI.setValue((String) newValue);
+            mQsUI.setSummary(mQsUI.getEntries()[index]);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
+            updateQsStyle(getActivity());
             return true;
         }
         return false;
@@ -214,6 +241,29 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQuickQsRowsLandscape.setLayoutResource(R.layout.tenx_preference_seekbar_bottom);
         mHeaderImage.setLayoutResource(R.layout.tenx_preference);
         mQsBtAutoOn.setLayoutResource(R.layout.tenx_preference_middle);
+        mQsUI.setLayoutResource(R.layout.tenx_preference_middle);
+    }
+
+    private static void updateQsStyle(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+
+        boolean isA11Style = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT) != 0;
+
+	String qsUIStyleCategory = "android.theme.customization.qs_ui";
+        String overlayThemeTarget  = "com.android.systemui";
+        String overlayThemePackage  = "com.android.system.qs.ui.A11";
+
+        if (mThemeUtils == null) {
+            mThemeUtils = new ThemeUtils(context);
+        }
+
+        // reset all overlays before applying
+        mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemeTarget, overlayThemeTarget);
+
+        if (isA11Style) {
+            mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemePackage, overlayThemeTarget);
+        }
     }
 
     @Override
