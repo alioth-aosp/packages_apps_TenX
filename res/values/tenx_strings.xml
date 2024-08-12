@@ -63,6 +63,7 @@
     <string name="theme_category_title">Theme</string>
     <string name="settings_category_title">Settings</string>
     <string name="misc_category_title">Misc</string>
+    <string name="gestures_all_category_title">Gestures</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -493,4 +494,8 @@
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
     <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+
+    <!-- Tap to sleep on lock screen -->
+    <string name="lockscreen_doubletap_sleep_title">Tap to sleep</string>
+    <string name="lockscreen_doubletap_sleep_summary">Double-tap on the lock screen to put device asleep</string>
 </resources>

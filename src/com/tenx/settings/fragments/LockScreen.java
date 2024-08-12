@@ -31,8 +31,14 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
+
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_lockscreen";
+
+    private SystemSettingSwitchPreference mDoubleTapToSleep;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -40,10 +46,18 @@ public class LockScreen extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.tenx_settings_lockscreen);
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
+
+        mDoubleTapToSleep = (SystemSettingSwitchPreference) findPreference(KEY_DOUBLE_TAP_TO_SLEEP);
+
+        setLayoutToPreference();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mDoubleTapToSleep.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override
