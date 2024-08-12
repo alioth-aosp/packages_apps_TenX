@@ -554,4 +554,8 @@
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Info</string>
     <string name="lockscreen_battery_info_summary">Display battery info when charging</string>
+
+    <!-- Fingerprint Ripple Effect -->
+    <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
+    <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
 </resources>
