@@ -566,4 +566,7 @@
     <string name="qs_tile_ui_style_a11_square">Square tiles</string>
     <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
 
+    <!-- Monet accurate shade -->
+    <string name="monet_accurate_shade_title">Accurate shade</string>
+    <string name="monet_accurate_shade_summary">Get close to the applied colors on the system</string>
 </resources>

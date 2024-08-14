@@ -81,6 +81,7 @@ public class MonetSettings extends DashboardFragment implements
     private static final String PREF_CHROMA_FACTOR = "chroma_factor";
     private static final String PREF_TINT_BACKGROUND = "tint_background";
     private static final String PREF_SECONDARY_COLOR = "secondary_color";
+    private static final String PREF_MONET_ACCURATE_SHADE = "monet_accurate_shade";
 
     private SystemSettingListPreference mThemeStylePref;
     private SystemSettingListPreference mColorSourcePref;
@@ -91,6 +92,7 @@ public class MonetSettings extends DashboardFragment implements
     private CustomSeekBarPreference mChromaPref;
     private SystemSettingSwitchPreference mTintBackgroundPref;
     private ColorPickerPreference mSecondaryColor;
+    private SystemSettingSwitchPreference mMonetAccurateShade;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -110,6 +112,7 @@ public class MonetSettings extends DashboardFragment implements
         mChromaPref = findPreference(PREF_CHROMA_FACTOR);
         mTintBackgroundPref = findPreference(PREF_TINT_BACKGROUND);
         mSecondaryColor = findPreference(PREF_SECONDARY_COLOR);
+        mMonetAccurateShade = findPreference(PREF_MONET_ACCURATE_SHADE);
 
         updatePreferences();
 
@@ -383,6 +386,7 @@ public class MonetSettings extends DashboardFragment implements
         mLuminancePref.setLayoutResource(R.layout.tenx_preference_custom_seekbar_middle);
         mChromaPref.setLayoutResource(R.layout.tenx_preference_custom_seekbar_middle);
         mTintBackgroundPref.setLayoutResource(R.layout.tenx_preference_bottom);
+        mMonetAccurateShade.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     @Override

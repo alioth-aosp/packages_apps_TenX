@@ -22,6 +22,12 @@
         android:entryValues="@array/theme_style_values"
         android:defaultValue="0" />
 
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:key="monet_accurate_shade"
+        android:title="@string/monet_accurate_shade_title"
+        android:summary="@string/monet_accurate_shade_summary"
+        android:defaultValue="false" />
+
     <com.tenx.support.preferences.SystemSettingListPreference
         android:key="color_source"
         android:title="@string/color_source_title"
