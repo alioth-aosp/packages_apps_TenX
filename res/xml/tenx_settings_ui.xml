@@ -18,7 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/tenx_title">
 
-    <PreferenceCategory
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="theme"
         android:title="@string/theme_category_title">
 
@@ -71,6 +71,6 @@
             android:summary="@string/theme_customization_lock_clock_summary"
             android:fragment="com.tenx.settings.fragments.theme.LockClockFonts"/>
 
-    </PreferenceCategory>
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>
