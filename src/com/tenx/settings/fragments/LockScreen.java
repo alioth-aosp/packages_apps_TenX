@@ -37,6 +37,7 @@ import com.tenx.support.preferences.SystemSettingSwitchPreference;
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_CLOCK_FONT = "android.theme.customization.lockscreen_clock_font";
     private static final String KEY_DOUBLE_TAP_TO_SLEEP = "double_tap_sleep_lockscreen";
     private static final String KEY_WEATHER_PREFERENCE = "weather_preference";
     private static final String KEY_WEATHER_ENABLED = "lockscreen_weather_enabled";
@@ -45,6 +46,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_BATTERY_INFO = "lockscreen_battery_info";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
 
+    private Preference mClockFont;
     private SystemSettingSwitchPreference mDoubleTapToSleep;
     private Preference mWeatherPreference;
     private SystemSettingSwitchPreference mWeatherEnabled;
@@ -62,6 +64,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
+        mClockFont = (Preference) findPreference(KEY_CLOCK_FONT);
         mDoubleTapToSleep = (SystemSettingSwitchPreference) findPreference(KEY_DOUBLE_TAP_TO_SLEEP);
         mWeatherPreference = (Preference) findPreference(KEY_WEATHER_PREFERENCE);
         mWeatherEnabled = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_ENABLED);
@@ -81,6 +84,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     }
 
     private void setLayoutToPreference() {
+        mClockFont.setLayoutResource(R.layout.tenx_preference);
         mDoubleTapToSleep.setLayoutResource(R.layout.tenx_preference_top);
         mRippleEffect.setLayoutResource(R.layout.tenx_preference_bottom);
         mWeatherPreference.setLayoutResource(R.layout.tenx_preference_top);

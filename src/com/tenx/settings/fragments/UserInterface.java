@@ -37,7 +37,6 @@ public class UserInterface extends SettingsPreferenceFragment
     private static final String KEY_ICON_PACK = "android.theme.customization.icon_pack";
     private static final String KEY_ADAPTIVE_ICON_PACK = "android.theme.customization.adaptive_icon_shape";
     private static final String KEY_SYSTEM_FONT = "android.theme.customization.fonts";
-    private static final String KEY_CLOCK_FONT = "android.theme.customization.lockscreen_clock_font";
     private static final String KEY_SIGNAL_ICONS = "android.theme.customization.signal_icon";
     private static final String KEY_WIFI_ICONS = "android.theme.customization.wifi_icon";
 
@@ -45,7 +44,6 @@ public class UserInterface extends SettingsPreferenceFragment
     private Preference mIconPack;
     private Preference mAdaptiveIconPack;
     private Preference mSystemFont;
-    private Preference mClockFont;
     private Preference mSignalIcons;
     private Preference mWiFiIcons;
 
@@ -58,7 +56,6 @@ public class UserInterface extends SettingsPreferenceFragment
         mIconPack = (Preference) findPreference(KEY_ICON_PACK);
         mAdaptiveIconPack = (Preference) findPreference(KEY_ADAPTIVE_ICON_PACK);
         mSystemFont = (Preference) findPreference(KEY_SYSTEM_FONT);
-        mClockFont = (Preference) findPreference(KEY_CLOCK_FONT);
         mSignalIcons = (Preference) findPreference(KEY_SIGNAL_ICONS);
         mWiFiIcons = (Preference) findPreference(KEY_WIFI_ICONS);
 
@@ -76,8 +73,7 @@ public class UserInterface extends SettingsPreferenceFragment
         mAdaptiveIconPack.setLayoutResource(R.layout.tenx_preference_middle);
         mSystemFont.setLayoutResource(R.layout.tenx_preference_middle);
         mSignalIcons.setLayoutResource(R.layout.tenx_preference_middle);
-        mWiFiIcons.setLayoutResource(R.layout.tenx_preference_middle);
-        mClockFont.setLayoutResource(R.layout.tenx_preference_bottom);
+        mWiFiIcons.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

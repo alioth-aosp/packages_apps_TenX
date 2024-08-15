@@ -67,6 +67,7 @@
     <string name="header_category_title">Header</string>
     <string name="lockscreen_weather_category_title">Weather</string>
     <string name="battery_category_title">Battery</string>
+    <string name="lockscreen_clock_category_title">Clock</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -577,8 +578,8 @@
     <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
     <string name="theme_customization_icon_shape_title">Icon shape</string>
     <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>    
-    <string name="theme_customization_lock_clock_title">Lockscreen clock font</string>
-    <string name="theme_customization_lock_clock_summary">Set LS clock font style</string>
+    <string name="theme_customization_lock_clock_title">Font</string>
+    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
     <string name="theme_customization_signal_icon_title">Signal icon style</string>
     <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
     <string name="theme_customization_wifi_icon_title">WiFi icon style</string>

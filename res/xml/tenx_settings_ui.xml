@@ -64,13 +64,6 @@
             android:summary="@string/theme_customization_wifi_icon_summary"
             android:fragment="com.tenx.settings.fragments.theme.WifiIcons"/>
 
-        <!-- LockClockFonts style -->
-        <Preference
-            android:key="android.theme.customization.lockscreen_clock_font"
-            android:title="@string/theme_customization_lock_clock_title"
-            android:summary="@string/theme_customization_lock_clock_summary"
-            android:fragment="com.tenx.settings.fragments.theme.LockClockFonts"/>
-
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>
