@@ -28,10 +28,17 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import lineageos.preference.LineagePartsPreference;
+
 public class Notifications extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Notifications";
+
+    private static final String KEY_NOTIF_LIGHTS_PREFERENCE_CATEGORY = "notification_light";
+    private static final String KEY_NOTIF_LIGHTS = "notification_lights";
+
+    private LineagePartsPreference mNotifLights;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,11 +46,32 @@ public class Notifications extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.tenx_settings_notifications);
         PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mNotifLights = (LineagePartsPreference) findPreference(KEY_NOTIF_LIGHTS);
+        boolean mNotLightsSupported = res.getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed);
+
+        if (!mNotLightsSupported) {
+            final PreferenceCategory lightsCategory =
+                    (PreferenceCategory) prefScreen.findPreference(KEY_NOTIF_LIGHTS_PREFERENCE_CATEGORY);
+            prefScreen.removePreference(lightsCategory);
+        }
+
+        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        boolean mNotLightsSupported = getActivity().getApplicationContext().getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed);
+
+        if (mNotLightsSupported) {
+            mNotifLights.setLayoutResource(R.layout.tenx_preference);
+        }
     }
 
     @Override

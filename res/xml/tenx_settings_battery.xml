@@ -18,4 +18,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/battery_title" >
 
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="battery_light"
+        android:title="@string/light_category_title">
+
+       	<!-- Battery lights -->
+        <lineageos.preference.LineagePartsPreference
+            android:key="battery_lights"
+            settings:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
+            settings:requiresConfigMask="64" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

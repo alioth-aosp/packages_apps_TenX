@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -29,20 +30,53 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import lineageos.preference.LineagePartsPreference;
+
 public class Battery extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Battery";
 
+    private static final String KEY_BATTERY_LIGHT_PREFERENCE_CATRGORY = "battery_light";
+    private static final String KEY_BATTERY_LIGHT = "battery_lights";
+
+    private LineagePartsPreference mBatteryLight;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_battery);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Context mContext = getActivity().getApplicationContext();
+        final Resources res = mContext.getResources();
+
+        mBatteryLight = (LineagePartsPreference) findPreference(KEY_BATTERY_LIGHT);
+
+        boolean mBatLightsSupported = res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
+
+        if (!mBatLightsSupported) {
+            final PreferenceCategory lightsCategory =
+                    (PreferenceCategory) prefScreen.findPreference(KEY_BATTERY_LIGHT_PREFERENCE_CATRGORY);
+            prefScreen.removePreference(lightsCategory);
+        }
+
+        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        boolean mBatLightsSupported = getActivity().getApplicationContext().getResources().getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
+
+        if (mBatLightsSupported) {
+            mBatteryLight.setLayoutResource(R.layout.tenx_preference);
+        }
     }
 
     @Override

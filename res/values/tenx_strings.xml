@@ -68,6 +68,7 @@
     <string name="lockscreen_weather_category_title">Weather</string>
     <string name="battery_category_title">Battery</string>
     <string name="lockscreen_clock_category_title">Clock</string>
+    <string name="light_category_title">Light</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>

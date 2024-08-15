@@ -18,4 +18,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="notification_light"
+        android:title="@string/light_category_title">
+
+        <!-- Notification lights -->
+        <lineageos.preference.LineagePartsPreference
+            android:key="notification_lights"
+            settings:requiresConfig="@*android:bool/config_intrusiveNotificationLed"
+            settings:replacesKey="notification_pulse" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>
