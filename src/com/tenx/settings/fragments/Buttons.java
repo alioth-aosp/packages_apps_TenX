@@ -29,8 +29,16 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import lineageos.preference.LineagePartsPreference;
+
 public class Buttons extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_LINEAGE_BUTTON_SETTINGS = "button_settings";
+    private static final String KEY_LINEAGE_POWER_MENU = "power_menu";
+
+    private LineagePartsPreference mLineageButtonSettings;
+    private LineagePartsPreference mLineagePowerMenu;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -39,11 +47,21 @@ public class Buttons extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mLineageButtonSettings = (LineagePartsPreference) findPreference(KEY_LINEAGE_BUTTON_SETTINGS);
+        mLineagePowerMenu = (LineagePartsPreference) findPreference(KEY_LINEAGE_POWER_MENU);
+
+        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mLineageButtonSettings.setLayoutResource(R.layout.tenx_preference_top);
+        mLineagePowerMenu.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     @Override

@@ -69,6 +69,7 @@
     <string name="battery_category_title">Battery</string>
     <string name="lockscreen_clock_category_title">Clock</string>
     <string name="light_category_title">Light</string>
+    <string name="lineage_settings_category_title">Lineage items</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -585,4 +586,7 @@
     <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
     <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
     <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
+
+    <!-- Power menu -->
+    <string name="power_menu_title">Power menu</string>
 </resources>
