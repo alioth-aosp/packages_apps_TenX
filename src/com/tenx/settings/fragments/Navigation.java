@@ -28,20 +28,34 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import lineageos.preference.LineageSystemSettingSwitchPreference;
+
 public class Navigation extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Navigation";
 
+    private static final String KEY_FORCE_SHOW_NAVBAR = "force_show_navbar";
+
+    private LineageSystemSettingSwitchPreference mForceShowNavbar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_navigation);
+
+        mForceShowNavbar = (LineageSystemSettingSwitchPreference) findPreference(KEY_FORCE_SHOW_NAVBAR);
+
+        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mForceShowNavbar.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override

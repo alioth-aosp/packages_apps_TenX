@@ -18,4 +18,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navigation_title" >
 
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="navbar"
+        android:title="@string/navbar_category_title">
+
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="force_show_navbar"
+            android:title="@string/force_show_navbar_title"
+            android:summary="@string/force_show_navbar_summary"
+            android:defaultValue="true" />
+
+     </com.tenx.settings.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>
