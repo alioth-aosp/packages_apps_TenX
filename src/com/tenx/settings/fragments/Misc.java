@@ -28,20 +28,34 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
+
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Misc";
 
+    private static final String KEY_THREE_FINGERS_SCREENSHOT = "three_finger_gesture";
+
+    private SystemSettingSwitchPreference mThreeFingersScreenshot;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_misc);
+
+        mThreeFingersScreenshot = (SystemSettingSwitchPreference) findPreference(KEY_THREE_FINGERS_SCREENSHOT);
+
+        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
+    }
+
+    private void setLayoutToPreference() {
+        mThreeFingersScreenshot.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override
