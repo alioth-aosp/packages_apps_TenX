@@ -32,6 +32,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import lineageos.preference.LineagePartsPreference;
 
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
+
 public class Battery extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -39,8 +41,10 @@ public class Battery extends SettingsPreferenceFragment
 
     private static final String KEY_BATTERY_LIGHT_PREFERENCE_CATRGORY = "battery_light";
     private static final String KEY_BATTERY_LIGHT = "battery_lights";
+    private static final String KEY_SENSOR_BLOCK = "sensor_block";
 
     private LineagePartsPreference mBatteryLight;
+    private SystemSettingSwitchPreference mSensorBlock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,7 @@ public class Battery extends SettingsPreferenceFragment
         final Resources res = mContext.getResources();
 
         mBatteryLight = (LineagePartsPreference) findPreference(KEY_BATTERY_LIGHT);
+        mSensorBlock = (SystemSettingSwitchPreference) findPreference(KEY_SENSOR_BLOCK);
 
         boolean mBatLightsSupported = res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
@@ -77,6 +82,8 @@ public class Battery extends SettingsPreferenceFragment
         if (mBatLightsSupported) {
             mBatteryLight.setLayoutResource(R.layout.tenx_preference);
         }
+
+        mSensorBlock.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override

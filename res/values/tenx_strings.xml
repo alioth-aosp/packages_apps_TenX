@@ -72,6 +72,7 @@
     <string name="lineage_settings_category_title">Lineage items</string>
     <string name="volume_category_title">Volume panel</string>
     <string name="fingerprint_category_title">Fingerprint</string>
+    <string name="saver_category_title">Saver</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -628,4 +629,8 @@
     <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
     <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
     <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
+
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Sensor block per-package</string>
+    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
 </resources>
