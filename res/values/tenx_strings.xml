@@ -70,6 +70,7 @@
     <string name="lockscreen_clock_category_title">Clock</string>
     <string name="light_category_title">Light</string>
     <string name="lineage_settings_category_title">Lineage items</string>
+    <string name="volume_category_title">Volume panel</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -605,4 +606,11 @@
     <!-- Brightness percentage -->
     <string name="brightness_percent_title">Brightness Percentage</string>
     <string name="brightness_percent_summary">Show hide brightness percentage text</string>
+
+    <!-- Volume TextView -->
+    <string name="volume_persen_switch_title">Volume Percentage</string>
+    <string name="volume_persen_switch_summary">show volume panel percentage</string>
+    <string name="volume_persen_style_title">Percentage Location</string>
+    <string name="volume_persen_style_top">Top</string>
+    <string name="volume_persen_style_bottom">Bottom</string>
 </resources>
