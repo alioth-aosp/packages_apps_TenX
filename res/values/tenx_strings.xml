@@ -71,6 +71,7 @@
     <string name="light_category_title">Light</string>
     <string name="lineage_settings_category_title">Lineage items</string>
     <string name="volume_category_title">Volume panel</string>
+    <string name="fingerprint_category_title">Fingerprint</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -621,4 +622,10 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+
+    <!-- Fingerprint authentication vibration -->
+    <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
+    <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
 </resources>

@@ -115,6 +115,29 @@
         android:layout="@layout/tenx_divider" />
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="fingerprint"
+        android:title="@string/fingerprint_category_title">
+
+        <!-- FInger vibrate on success -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="fp_success_vibrate"
+            android:title="@string/fp_success_vibrate_title"
+            android:summary="@string/fp_success_vibrate_summary"
+            android:defaultValue="true" />
+
+       	<!-- FInger vibrate on error -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="fp_error_vibrate"
+            android:title="@string/fp_error_vibrate_title"
+            android:summary="@string/fp_error_vibrate_summary"
+            android:defaultValue="true" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="misc"
         android:title="@string/misc_category_title">
 
