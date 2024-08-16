@@ -76,6 +76,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String KEY_HEADER_IMAGE = "category_custom_header";
     private static final String KEY_QS_BT_AUTO_ON = "qs_bt_auto_on";
     private static final String KEY_QS_UI_STYLE  = "qs_tile_ui_style";
+    private static final String KEY_BRIGHTNESS_PERCENTAGE = "BRIGHTNESS_TEXTVIEW";
 
     private static final int BATTERY_STYLE_PORTRAIT = 0;
     private static final int BATTERY_STYLE_TEXT = 4;
@@ -116,6 +117,7 @@ public class QuickSettings extends SettingsPreferenceFragment
     private Preference mHeaderImage;
     private SystemSettingSwitchPreference mQsBtAutoOn;
     private ListPreference mQsUI;
+    private SystemSettingSwitchPreference mBrightnessPercentage;
 
     private static ThemeUtils mThemeUtils;
 
@@ -163,6 +165,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         mQsDualTone = (SystemSettingSwitchPreference) findPreference(KEY_QS_DUAL_TONE);
         mHeaderImage = (Preference) findPreference(KEY_HEADER_IMAGE);
         mQsBtAutoOn = (SystemSettingSwitchPreference) findPreference(KEY_QS_BT_AUTO_ON);
+        mBrightnessPercentage = (SystemSettingSwitchPreference) findPreference(KEY_BRIGHTNESS_PERCENTAGE);
 
         int batterystyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -242,6 +245,7 @@ public class QuickSettings extends SettingsPreferenceFragment
         mHeaderImage.setLayoutResource(R.layout.tenx_preference);
         mQsBtAutoOn.setLayoutResource(R.layout.tenx_preference_middle);
         mQsUI.setLayoutResource(R.layout.tenx_preference_middle);
+        mBrightnessPercentage.setLayoutResource(R.layout.tenx_preference_middle);
     }
 
     private static void updateQsStyle(Context context) {

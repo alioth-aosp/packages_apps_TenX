@@ -601,4 +601,8 @@
     <string name="outline_style">Outline style</string>
     <string name="shaded_layer_style">Shaded Layer style</string>
     <string name="volume_style_title">Volume panel styles</string>
+
+    <!-- Brightness percentage -->
+    <string name="brightness_percent_title">Brightness Percentage</string>
+    <string name="brightness_percent_summary">Show hide brightness percentage text</string>
 </resources>

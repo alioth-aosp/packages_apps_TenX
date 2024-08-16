@@ -147,6 +147,13 @@
             android:summary="@string/quick_settings_auto_brightness_icon_summary"
             android:defaultValue="true" />
 
+        <!-- Brightness percentage -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+             android:title="@string/brightness_percent_title"
+             android:key="BRIGHTNESS_TEXTVIEW"
+             android:summary="@string/brightness_percent_summary"
+             android:defaultValue="false" />
+
         <!-- Secure QS tiles require unlock -->
         <com.tenx.support.preferences.SecureSettingSwitchPreference
             android:key="qstile_requires_unlocking"
