@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2020 Elegant UI
+<!--
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,34 +17,34 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/battery_title" >
+    android:title="@string/sensor_block_title">
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
-        android:key="battery_light"
-        android:title="@string/light_category_title">
-
-       	<!-- Battery lights -->
-        <lineageos.preference.LineagePartsPreference
-            android:key="battery_lights"
-            settings:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
-            settings:requiresConfigMask="64" />
-
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    <!-- Sensor block switch -->
+    <com.tenx.support.preferences.SystemSettingSwitchPreference
+        android:key="sensor_block"
+        android:title="@string/sensor_block_title"
+        android:summary="@string/sensor_block_summary"
+        android:defaultValue="false" />
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
-        android:key="battery_saver"
-        android:title="@string/saver_category_title">
+        android:title="@string/sensor_block_app_picker_title"
+        android:dependency="sensor_block"
+        android:key="sensor_block_applications">
 
-        <!-- Sensor block per package -->
+        <!-- Sensor block per app -->
         <Preference
-            android:key="sensor_block_settings"
-            android:title="@string/sensor_block_title"
-            android:summary="@string/sensor_block_summary"
-            android:fragment="com.tenx.settings.fragments.battery.SensorBlock" />
+            android:key="add_sensor_block_packages"
+            android:title="@string/add_sensor_block_package_title" />
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="sensor_block_footer"
+        android:selectable="false"
+        settings:searchable="false"
+        android:dependency="sensor_block" />
 
 </PreferenceScreen>
