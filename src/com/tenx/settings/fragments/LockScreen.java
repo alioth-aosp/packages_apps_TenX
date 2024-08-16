@@ -45,6 +45,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_WEATHER_TEXT = "lockscreen_weather_text";
     private static final String KEY_BATTERY_INFO = "lockscreen_battery_info";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
+    private static final String KEY_HIDE_POWERMENU = "lockscreen_enable_power_menu";
 
     private Preference mClockFont;
     private SystemSettingSwitchPreference mDoubleTapToSleep;
@@ -54,6 +55,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mWeatherText;
     private SystemSettingSwitchPreference mBatteryInfo;
     private SystemSettingSwitchPreference mRippleEffect;
+    private SystemSettingSwitchPreference mHidePowerMenu;
 
     private OmniJawsClient mWeatherClient;
 
@@ -72,6 +74,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mWeatherText = (SystemSettingSwitchPreference) findPreference(KEY_WEATHER_TEXT);
         mBatteryInfo = (SystemSettingSwitchPreference) findPreference(KEY_BATTERY_INFO);
         mRippleEffect = (SystemSettingSwitchPreference) findPreference(KEY_RIPPLE_EFFECT);
+        mHidePowerMenu = (SystemSettingSwitchPreference) findPreference(KEY_HIDE_POWERMENU);
 
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
@@ -92,6 +95,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mWeatherLocation.setLayoutResource(R.layout.tenx_preference_middle);
         mWeatherText.setLayoutResource(R.layout.tenx_preference_bottom);
         mBatteryInfo.setLayoutResource(R.layout.tenx_preference);
+        mHidePowerMenu.setLayoutResource(R.layout.tenx_preference);
     }
 
     private void updateWeatherSettings() {

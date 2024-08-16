@@ -613,4 +613,8 @@
     <string name="volume_persen_style_title">Percentage Location</string>
     <string name="volume_persen_style_top">Top</string>
     <string name="volume_persen_style_bottom">Bottom</string>
+
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
 </resources>

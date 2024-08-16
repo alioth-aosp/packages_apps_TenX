@@ -111,4 +111,20 @@
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_category_title">
+
+        <!-- Power menu in lockscreen -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_enable_power_menu"
+            android:title="@string/lockscreen_enable_power_menu_title"
+            android:summary="@string/lockscreen_enable_power_menu_summary"
+            android:defaultValue="true" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>
