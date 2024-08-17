@@ -68,6 +68,9 @@
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
     <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="notification"
         android:title="@string/misc_category_title">

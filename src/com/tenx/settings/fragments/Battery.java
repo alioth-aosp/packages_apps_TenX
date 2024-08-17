@@ -40,9 +40,11 @@ public class Battery extends SettingsPreferenceFragment
     private static final String KEY_BATTERY_LIGHT_PREFERENCE_CATRGORY = "battery_light";
     private static final String KEY_BATTERY_LIGHT = "battery_lights";
     private static final String KEY_SENSOR_BLOCK = "sensor_block_settings";
+    private static final String KEY_SMART_PIXELS = "smart_pixels";
 
     private LineagePartsPreference mBatteryLight;
     private Preference mSensorBlock;
+    private Preference mSmartPixels;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class Battery extends SettingsPreferenceFragment
 
         mBatteryLight = (LineagePartsPreference) findPreference(KEY_BATTERY_LIGHT);
         mSensorBlock = (Preference) findPreference(KEY_SENSOR_BLOCK);
+        mSmartPixels = (Preference) findPreference(KEY_SMART_PIXELS);
 
         boolean mBatLightsSupported = res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
@@ -81,7 +84,8 @@ public class Battery extends SettingsPreferenceFragment
             mBatteryLight.setLayoutResource(R.layout.tenx_preference);
         }
 
-        mSensorBlock.setLayoutResource(R.layout.tenx_preference);
+        mSensorBlock.setLayoutResource(R.layout.tenx_preference_top);
+        mSmartPixels.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
