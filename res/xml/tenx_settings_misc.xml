@@ -50,6 +50,24 @@
             android:summary="@string/floating_rotation_button_summary"
             android:defaultValue="true" />
 
+        <!-- Adaptive playback -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="adaptive_playback_enabled"
+            android:title="@string/adaptive_playback_title"
+            android:summary="@string/adaptive_playback_summary"
+            android:persistent="false" />
+
+        <!-- Adaptive playback timeout -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="adaptive_playback_timeout"
+            android:title="@string/adaptive_playback_timeout_title"
+            android:defaultValue="30"
+            android:max="600"
+            settings:min="10"
+            settings:interval="10"
+            settings:units="sec"
+            android:dependency="adaptive_playback_enabled" />
+
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

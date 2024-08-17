@@ -30,6 +30,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.tenx.support.preferences.SystemSettingSeekBarPreference;
 
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -40,11 +41,15 @@ public class Misc extends SettingsPreferenceFragment
     private static final String KEY_POCKET_JUDGE = "pocket_judge";
     private static final String KEY_CHARGING_ANIMATION = "charging_animation";
     private static final String KEY_ROTATION_BUTTON = "enable_floating_rotation_button";
+    private static final String KEY_ADAPTIVE_PLAYBACK = "adaptive_playback_enabled";
+    private static final String KEY_ADAPTIVE_TIMEOUT = "adaptive_playback_timeout";
 
     private SystemSettingSwitchPreference mThreeFingersScreenshot;
     private SystemSettingSwitchPreference mPocketJudge;
     private SystemSettingSwitchPreference mChargingAnimation;
     private SystemSettingSwitchPreference mRotationButton;
+    private SystemSettingSwitchPreference mAdaptivePlayback;
+    private SystemSettingSeekBarPreference mAdaptivePlaybackTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,8 @@ public class Misc extends SettingsPreferenceFragment
         mPocketJudge = (SystemSettingSwitchPreference) findPreference(KEY_POCKET_JUDGE);
         mChargingAnimation = (SystemSettingSwitchPreference) findPreference(KEY_CHARGING_ANIMATION);
         mRotationButton = (SystemSettingSwitchPreference) findPreference(KEY_ROTATION_BUTTON);
+        mAdaptivePlayback = (SystemSettingSwitchPreference) findPreference(KEY_ADAPTIVE_PLAYBACK);
+        mAdaptivePlaybackTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_ADAPTIVE_TIMEOUT);
 
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
@@ -76,7 +83,9 @@ public class Misc extends SettingsPreferenceFragment
         mThreeFingersScreenshot.setLayoutResource(R.layout.tenx_preference_top);
         mPocketJudge.setLayoutResource(R.layout.tenx_preference_middle);
         mChargingAnimation.setLayoutResource(R.layout.tenx_preference_middle);
-        mRotationButton.setLayoutResource(R.layout.tenx_preference_bottom);
+        mRotationButton.setLayoutResource(R.layout.tenx_preference_middle);
+        mAdaptivePlayback.setLayoutResource(R.layout.tenx_preference_middle);
+        mAdaptivePlaybackTimeout.setLayoutResource(R.layout.tenx_preference_seekbar_bottom);
     }
 
     @Override
