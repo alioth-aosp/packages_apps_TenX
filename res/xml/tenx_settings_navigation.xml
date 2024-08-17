@@ -22,11 +22,20 @@
         android:key="navbar"
         android:title="@string/navbar_category_title">
 
+        <!-- Force show navbar -->
         <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="force_show_navbar"
             android:title="@string/force_show_navbar_title"
             android:summary="@string/force_show_navbar_summary"
             android:defaultValue="true" />
+
+        <!-- Pixel navbar animation -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="pixel_nav_animation"
+            android:title="@string/pixel_navbar_anim_title"
+            android:summary="@string/pixel_navbar_anim_summary"
+            android:defaultValue="true"
+            android:dependency="force_show_navbar" />
 
      </com.tenx.settings.preferences.TenXPreferenceCategory>
 

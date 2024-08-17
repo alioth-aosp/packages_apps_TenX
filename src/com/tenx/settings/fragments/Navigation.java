@@ -29,6 +29,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import lineageos.preference.LineageSystemSettingSwitchPreference;
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
 
 public class Navigation extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -36,8 +37,10 @@ public class Navigation extends SettingsPreferenceFragment
     public static final String TAG = "Navigation";
 
     private static final String KEY_FORCE_SHOW_NAVBAR = "force_show_navbar";
+    private static final String KEY_NAV_ANIMATION = "pixel_nav_animation";
 
     private LineageSystemSettingSwitchPreference mForceShowNavbar;
+    private SystemSettingSwitchPreference mNavAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class Navigation extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.tenx_settings_navigation);
 
         mForceShowNavbar = (LineageSystemSettingSwitchPreference) findPreference(KEY_FORCE_SHOW_NAVBAR);
+        mNavAnimation = (SystemSettingSwitchPreference) findPreference(KEY_NAV_ANIMATION);
 
         setLayoutToPreference();
     }
@@ -55,7 +59,8 @@ public class Navigation extends SettingsPreferenceFragment
     }
 
     private void setLayoutToPreference() {
-        mForceShowNavbar.setLayoutResource(R.layout.tenx_preference);
+        mForceShowNavbar.setLayoutResource(R.layout.tenx_preference_top);
+        mNavAnimation.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
