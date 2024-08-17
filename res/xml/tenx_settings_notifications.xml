@@ -18,32 +18,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
-        android:key="notification_sound"
-        android:title="@string/sound_category_title">
-
-        <!-- Noisy notifications -->
-        <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="notification_sound_vib_screen_on"
-            android:title="@string/notification_sound_vib_screen_on_title"
-            android:summary="@string/notification_sound_vib_screen_on_summary"
-            android:defaultValue="true" />
-
-        <!-- Notification guts kill app button -->
-        <com.tenx.support.preferences.SystemSettingSwitchPreference
-            android:key="notification_guts_kill_app_button"
-            android:title="@string/notification_guts_kill_app_button_title"
-            android:summary="@string/notification_guts_kill_app_button_summary" />
-
-        <!-- Show clipboard overlay -->
-        <com.tenx.support.preferences.SecureSettingSwitchPreference
-            android:key="show_clipboard_overlay"
-            android:title="@string/show_clipboard_overlay_title"
-            android:summary="@string/show_clipboard_overlay_summary"
-            android:defaultValue="true"/>
-
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
-
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
@@ -91,6 +65,32 @@
             settings:min="1"
             android:max="10"
             android:dependency="heads_up_notifications_enabled" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="notification"
+        android:title="@string/misc_category_title">
+
+        <!-- Noisy notifications -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="notification_sound_vib_screen_on"
+            android:title="@string/notification_sound_vib_screen_on_title"
+            android:summary="@string/notification_sound_vib_screen_on_summary"
+            android:defaultValue="true" />
+
+        <!-- Notification guts kill app button -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="notification_guts_kill_app_button"
+            android:title="@string/notification_guts_kill_app_button_title"
+            android:summary="@string/notification_guts_kill_app_button_summary" />
+
+        <!-- Show clipboard overlay -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="show_clipboard_overlay"
+            android:title="@string/show_clipboard_overlay_title"
+            android:summary="@string/show_clipboard_overlay_summary"
+            android:defaultValue="true"/>
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 

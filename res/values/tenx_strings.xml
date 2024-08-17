@@ -74,7 +74,6 @@
     <string name="fingerprint_category_title">Fingerprint</string>
     <string name="saver_category_title">Saver</string>
     <string name="heads_up_category_title">Heads up</string>
-    <string name="sound_category_title">Sound</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
