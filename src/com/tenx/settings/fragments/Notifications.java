@@ -95,7 +95,7 @@ public class Notifications extends SettingsPreferenceFragment
 
         mHeadsupEnabled.setLayoutResource(R.layout.tenx_preference_top);
         mLessBoringHeadsup.setLayoutResource(R.layout.tenx_preference_middle);
-        mHeadsupTimeout.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mHeadsupTimeout.setLayoutResource(R.layout.tenx_preference_seekbar_bottom);
         mNoisyNotifications.setLayoutResource(R.layout.tenx_preference_top);
         mKillNotifGuts.setLayoutResource(R.layout.tenx_preference_bottom);
     }
