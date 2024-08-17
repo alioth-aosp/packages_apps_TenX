@@ -48,6 +48,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_HIDE_POWERMENU = "lockscreen_enable_power_menu";
     private static final String KEY_FP_VIBRATE_SUCCESS = "fp_success_vibrate";
     private static final String KEY_FP_VIBRATE_ERROR = "fp_error_vibrate";
+    private static final String KEY_CHARGING_ANIMATION = "lockscreen_charging_animation";
 
     private Preference mClockFont;
     private SystemSettingSwitchPreference mDoubleTapToSleep;
@@ -60,6 +61,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SystemSettingSwitchPreference mHidePowerMenu;
     private SystemSettingSwitchPreference mFpVibrateSuccess;
     private SystemSettingSwitchPreference mFpVibrateError;
+    private SystemSettingSwitchPreference mChargingAnimation;
 
     private OmniJawsClient mWeatherClient;
 
@@ -81,6 +83,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mHidePowerMenu = (SystemSettingSwitchPreference) findPreference(KEY_HIDE_POWERMENU);
         mFpVibrateSuccess = (SystemSettingSwitchPreference) findPreference(KEY_FP_VIBRATE_SUCCESS);
         mFpVibrateError = (SystemSettingSwitchPreference) findPreference(KEY_FP_VIBRATE_ERROR);
+        mChargingAnimation = (SystemSettingSwitchPreference) findPreference(KEY_CHARGING_ANIMATION);
 
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
@@ -100,10 +103,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mWeatherEnabled.setLayoutResource(R.layout.tenx_preference_middle);
         mWeatherLocation.setLayoutResource(R.layout.tenx_preference_middle);
         mWeatherText.setLayoutResource(R.layout.tenx_preference_bottom);
-        mBatteryInfo.setLayoutResource(R.layout.tenx_preference);
+        mBatteryInfo.setLayoutResource(R.layout.tenx_preference_top);
         mHidePowerMenu.setLayoutResource(R.layout.tenx_preference);
         mFpVibrateSuccess.setLayoutResource(R.layout.tenx_preference_top);
         mFpVibrateError.setLayoutResource(R.layout.tenx_preference_bottom);
+        mChargingAnimation.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     private void updateWeatherSettings() {
