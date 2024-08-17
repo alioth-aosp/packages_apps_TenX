@@ -39,10 +39,12 @@ public class Misc extends SettingsPreferenceFragment
     private static final String KEY_THREE_FINGERS_SCREENSHOT = "three_finger_gesture";
     private static final String KEY_POCKET_JUDGE = "pocket_judge";
     private static final String KEY_CHARGING_ANIMATION = "charging_animation";
+    private static final String KEY_ROTATION_BUTTON = "enable_floating_rotation_button";
 
     private SystemSettingSwitchPreference mThreeFingersScreenshot;
     private SystemSettingSwitchPreference mPocketJudge;
     private SystemSettingSwitchPreference mChargingAnimation;
+    private SystemSettingSwitchPreference mRotationButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class Misc extends SettingsPreferenceFragment
         mThreeFingersScreenshot = (SystemSettingSwitchPreference) findPreference(KEY_THREE_FINGERS_SCREENSHOT);
         mPocketJudge = (SystemSettingSwitchPreference) findPreference(KEY_POCKET_JUDGE);
         mChargingAnimation = (SystemSettingSwitchPreference) findPreference(KEY_CHARGING_ANIMATION);
+        mRotationButton = (SystemSettingSwitchPreference) findPreference(KEY_ROTATION_BUTTON);
 
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
@@ -72,7 +75,8 @@ public class Misc extends SettingsPreferenceFragment
     private void setLayoutToPreference() {
         mThreeFingersScreenshot.setLayoutResource(R.layout.tenx_preference_top);
         mPocketJudge.setLayoutResource(R.layout.tenx_preference_middle);
-        mChargingAnimation.setLayoutResource(R.layout.tenx_preference_bottom);
+        mChargingAnimation.setLayoutResource(R.layout.tenx_preference_middle);
+        mRotationButton.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
