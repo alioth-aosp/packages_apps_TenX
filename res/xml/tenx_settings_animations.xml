@@ -50,4 +50,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="screen_off_animations_category"
+        android:title="@string/screen_off_category_title">
+
+        <!-- Screen off animation -->
+        <com.tenx.support.preferences.SystemSettingListPreference
+            android:key="screen_off_animation"
+            android:title="@string/screen_off_animation_title"
+            android:dialogTitle="@string/screen_off_animation_title"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -74,6 +74,7 @@
     <string name="fingerprint_category_title">Fingerprint</string>
     <string name="saver_category_title">Saver</string>
     <string name="heads_up_category_title">Heads up</string>
+    <string name="screen_off_category_title">Screen off</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -697,4 +698,10 @@
     <string name="custom_timeout_summary_2hours">2 hours</string>
     <string name="custom_timeout_summary_4hours">4 hours</string>
     <string name="custom_timeout_summary_8hours">8 hours</string>
+
+    <!-- Screen Off animation -->
+    <string name="screen_off_animation_title">Screen off animation</string>
+    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_scale">Scale</string>
 </resources>

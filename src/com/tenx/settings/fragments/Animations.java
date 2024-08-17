@@ -49,10 +49,12 @@ public class Animations extends SettingsPreferenceFragment
     private static final String KEY_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String KEY_SCREEN_OFF = "screen_off_animation";
 
     private SystemSettingListPreference mTileAnimationStyle;
     private SystemSettingSeekBarPreference mTileAnimationDuration;
     private SystemSettingListPreference mTileAnimationInterpolator;
+    private SystemSettingListPreference mScreenOff;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -63,6 +65,7 @@ public class Animations extends SettingsPreferenceFragment
         mTileAnimationStyle = (SystemSettingListPreference) findPreference(KEY_TILE_ANIM_STYLE);
         mTileAnimationDuration = (SystemSettingSeekBarPreference) findPreference(KEY_TILE_ANIM_DURATION);
         mTileAnimationInterpolator = (SystemSettingListPreference) findPreference(KEY_TILE_ANIM_INTERPOLATOR);
+        mScreenOff = (SystemSettingListPreference) findPreference(KEY_SCREEN_OFF);
 
         mTileAnimationStyle.setOnPreferenceChangeListener(this);
 
@@ -92,6 +95,7 @@ public class Animations extends SettingsPreferenceFragment
         mTileAnimationStyle.setLayoutResource(R.layout.tenx_preference_top);
         mTileAnimationDuration.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
         mTileAnimationInterpolator.setLayoutResource(R.layout.tenx_preference_bottom);
+        mScreenOff.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override
