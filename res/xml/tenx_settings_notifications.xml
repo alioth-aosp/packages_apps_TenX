@@ -19,6 +19,22 @@
     android:title="@string/notifications_title">
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="notification_sound"
+        android:title="@string/sound_category_title">
+
+        <!-- Noisy notifications -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="notification_sound_vib_screen_on"
+            android:title="@string/notification_sound_vib_screen_on_title"
+            android:summary="@string/notification_sound_vib_screen_on_summary"
+            android:defaultValue="true" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.settings.preferences.TenXPreferenceCategory
         android:key="notification_light"
         android:title="@string/light_category_title">
 

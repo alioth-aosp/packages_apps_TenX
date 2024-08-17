@@ -44,11 +44,13 @@ public class Notifications extends SettingsPreferenceFragment
     private static final String KEY_HEADS_UP_ENABLED = "heads_up_notifications_enabled";
     private static final String KEY_HEADS_UP_LESS_BORING = "less_boring_heads_up";
     private static final String KEY_HEADS_UP_TIMEOUT = "heads_up_timeout";
+    private static final String KEY_NOISY_NOTIFICATIONS = "notification_sound_vib_screen_on";
 
     private LineagePartsPreference mNotifLights;
     private GlobalSettingSwitchPreference mHeadsupEnabled;
     private SystemSettingSwitchPreference mLessBoringHeadsup;
     private SystemSettingSeekBarPreference mHeadsupTimeout;
+    private SystemSettingSwitchPreference mNoisyNotifications;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class Notifications extends SettingsPreferenceFragment
         mHeadsupEnabled = (GlobalSettingSwitchPreference) findPreference(KEY_HEADS_UP_ENABLED);
         mLessBoringHeadsup = (SystemSettingSwitchPreference) findPreference(KEY_HEADS_UP_LESS_BORING);
         mHeadsupTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_HEADS_UP_TIMEOUT);
+        mNoisyNotifications = (SystemSettingSwitchPreference) findPreference(KEY_NOISY_NOTIFICATIONS);
 
         setLayoutToPreference();
     }
@@ -90,6 +93,7 @@ public class Notifications extends SettingsPreferenceFragment
         mHeadsupEnabled.setLayoutResource(R.layout.tenx_preference_top);
         mLessBoringHeadsup.setLayoutResource(R.layout.tenx_preference_middle);
         mHeadsupTimeout.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
+        mNoisyNotifications.setLayoutResource(R.layout.tenx_preference);
     }
 
     @Override
