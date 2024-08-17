@@ -18,6 +18,7 @@ package com.tenx.settings.fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.provider.Settings;
@@ -36,15 +37,26 @@ public class Misc extends SettingsPreferenceFragment
     public static final String TAG = "Misc";
 
     private static final String KEY_THREE_FINGERS_SCREENSHOT = "three_finger_gesture";
+    private static final String KEY_POCKET_JUDGE = "pocket_judge";
 
     private SystemSettingSwitchPreference mThreeFingersScreenshot;
+    private SystemSettingSwitchPreference mPocketJudge;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.tenx_settings_misc);
 
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
+
         mThreeFingersScreenshot = (SystemSettingSwitchPreference) findPreference(KEY_THREE_FINGERS_SCREENSHOT);
+        mPocketJudge = (SystemSettingSwitchPreference) findPreference(KEY_POCKET_JUDGE);
+
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
 
         setLayoutToPreference();
     }
@@ -55,7 +67,8 @@ public class Misc extends SettingsPreferenceFragment
     }
 
     private void setLayoutToPreference() {
-        mThreeFingersScreenshot.setLayoutResource(R.layout.tenx_preference);
+        mThreeFingersScreenshot.setLayoutResource(R.layout.tenx_preference_top);
+        mPocketJudge.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
