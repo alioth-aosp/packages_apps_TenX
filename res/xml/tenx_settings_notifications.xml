@@ -30,4 +30,39 @@
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:layout="@layout/tenx_divider" />
+
+    <com.tenx.settings.preferences.TenXPreferenceCategory
+        android:key="heads_up"
+        android:title="@string/heads_up_category_title">
+
+        <!-- Heads up notifications -->
+        <com.tenx.support.preferences.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:title="@string/notification_heads_up_title"
+            android:summary="@string/notification_heads_up_summary"
+            android:defaultValue="true" />
+
+        <!-- Less boring heads up -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="less_boring_heads_up"
+            android:title="@string/less_boring_heads_up_title"
+            android:summary="@string/less_boring_heads_up_summary"
+            android:defaultValue="false"
+            android:dependency="heads_up_notifications_enabled" />
+
+        <!-- Heads up timeout -->
+        <com.tenx.support.preferences.SystemSettingSeekBarPreference
+            android:key="heads_up_timeout"
+            android:title="@string/notification_heads_up_timeout_title"
+            android:summary="@string/notification_heads_up_timeout_summary"
+            settings:units="@string/unit_seconds"
+            android:defaultValue="5"
+            settings:min="1"
+            android:max="10"
+            android:dependency="heads_up_notifications_enabled" />
+
+    </com.tenx.settings.preferences.TenXPreferenceCategory>
+
 </PreferenceScreen>

@@ -73,6 +73,7 @@
     <string name="volume_category_title">Volume panel</string>
     <string name="fingerprint_category_title">Fingerprint</string>
     <string name="saver_category_title">Saver</string>
+    <string name="heads_up_category_title">Heads up</string>
 
     <!-- Units -->
     <string name="unit_seconds">seconds</string>
@@ -646,4 +647,14 @@
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel animation</string>
     <string name="pixel_navbar_anim_summary">Enable pixel style animation for 3-button navigation bar</string>
+
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Notifications</string>
+    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Less boring</string>
+    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="notification_heads_up_timeout_title">Time out</string>
+    <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
 </resources>

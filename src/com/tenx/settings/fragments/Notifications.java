@@ -30,6 +30,10 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import lineageos.preference.LineagePartsPreference;
 
+import com.tenx.support.preferences.GlobalSettingSwitchPreference;
+import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.tenx.support.preferences.SystemSettingSeekBarPreference;
+
 public class Notifications extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -37,8 +41,14 @@ public class Notifications extends SettingsPreferenceFragment
 
     private static final String KEY_NOTIF_LIGHTS_PREFERENCE_CATEGORY = "notification_light";
     private static final String KEY_NOTIF_LIGHTS = "notification_lights";
+    private static final String KEY_HEADS_UP_ENABLED = "heads_up_notifications_enabled";
+    private static final String KEY_HEADS_UP_LESS_BORING = "less_boring_heads_up";
+    private static final String KEY_HEADS_UP_TIMEOUT = "heads_up_timeout";
 
     private LineagePartsPreference mNotifLights;
+    private GlobalSettingSwitchPreference mHeadsupEnabled;
+    private SystemSettingSwitchPreference mLessBoringHeadsup;
+    private SystemSettingSeekBarPreference mHeadsupTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +67,10 @@ public class Notifications extends SettingsPreferenceFragment
             prefScreen.removePreference(lightsCategory);
         }
 
+        mHeadsupEnabled = (GlobalSettingSwitchPreference) findPreference(KEY_HEADS_UP_ENABLED);
+        mLessBoringHeadsup = (SystemSettingSwitchPreference) findPreference(KEY_HEADS_UP_LESS_BORING);
+        mHeadsupTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_HEADS_UP_TIMEOUT);
+
         setLayoutToPreference();
     }
 
@@ -72,6 +86,10 @@ public class Notifications extends SettingsPreferenceFragment
         if (mNotLightsSupported) {
             mNotifLights.setLayoutResource(R.layout.tenx_preference);
         }
+
+        mHeadsupEnabled.setLayoutResource(R.layout.tenx_preference_top);
+        mLessBoringHeadsup.setLayoutResource(R.layout.tenx_preference_middle);
+        mHeadsupTimeout.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
     }
 
     @Override
