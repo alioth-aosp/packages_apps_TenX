@@ -31,6 +31,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import lineageos.preference.LineagePartsPreference;
 
 import com.tenx.support.preferences.GlobalSettingSwitchPreference;
+import com.tenx.support.preferences.SecureSettingSwitchPreference;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
 import com.tenx.support.preferences.SystemSettingSeekBarPreference;
 
@@ -46,6 +47,7 @@ public class Notifications extends SettingsPreferenceFragment
     private static final String KEY_HEADS_UP_TIMEOUT = "heads_up_timeout";
     private static final String KEY_NOISY_NOTIFICATIONS = "notification_sound_vib_screen_on";
     private static final String KEY_NOTIF_GUTS_KILL = "notification_guts_kill_app_button";
+    private static final String KEY_CLIPBOARD_OVERLAY = "show_clipboard_overlay";
 
     private LineagePartsPreference mNotifLights;
     private GlobalSettingSwitchPreference mHeadsupEnabled;
@@ -53,6 +55,7 @@ public class Notifications extends SettingsPreferenceFragment
     private SystemSettingSeekBarPreference mHeadsupTimeout;
     private SystemSettingSwitchPreference mNoisyNotifications;
     private SystemSettingSwitchPreference mKillNotifGuts;
+    private SecureSettingSwitchPreference mClipboardOverlay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,7 @@ public class Notifications extends SettingsPreferenceFragment
         mHeadsupTimeout = (SystemSettingSeekBarPreference) findPreference(KEY_HEADS_UP_TIMEOUT);
         mNoisyNotifications = (SystemSettingSwitchPreference) findPreference(KEY_NOISY_NOTIFICATIONS);
         mKillNotifGuts = (SystemSettingSwitchPreference) findPreference(KEY_NOTIF_GUTS_KILL);
+        mClipboardOverlay = (SecureSettingSwitchPreference) findPreference(KEY_CLIPBOARD_OVERLAY);
 
         setLayoutToPreference();
     }
@@ -97,7 +101,8 @@ public class Notifications extends SettingsPreferenceFragment
         mLessBoringHeadsup.setLayoutResource(R.layout.tenx_preference_middle);
         mHeadsupTimeout.setLayoutResource(R.layout.tenx_preference_seekbar_bottom);
         mNoisyNotifications.setLayoutResource(R.layout.tenx_preference_top);
-        mKillNotifGuts.setLayoutResource(R.layout.tenx_preference_bottom);
+        mKillNotifGuts.setLayoutResource(R.layout.tenx_preference_middle);
+        mClipboardOverlay.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
