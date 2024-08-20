@@ -144,10 +144,32 @@
        	<!-- FInger vibrate on error -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="fp_error_vibrate"
-            tenx:position="bottom"
+            tenx:position="middle"
             android:title="@string/fp_error_vibrate_title"
             android:summary="@string/fp_error_vibrate_summary"
             android:defaultValue="true" />
+
+        <!-- UDFPS icon picker -->
+        <Preference
+            android:key="udfps_icon_picker"
+            android:title="@string/udfps_icon_picker_title"
+            android:summary="@string/udfps_icon_picker_summary"
+            android:fragment="com.tenx.settings.fragments.lockscreen.UdfpsIconPicker" />
+
+        <!-- UDFPS animations picker -->
+        <Preference
+            android:key="udfps_recognizing_animation_preview"
+            android:title="@string/udfps_recog_animation_effect_title"
+            android:summary="@string/udfps_recog_animation_effect_summary"
+            android:fragment="com.tenx.settings.fragments.lockscreen.UdfpsAnimation" />
+
+        <!-- Screen off UDFPS -->
+        <com.tenx.support.preferences.SecureSettingSwitchPreference
+            android:key="screen_off_udfps_enabled"
+            tenx:position="bottom"
+            android:title="@string/screen_off_udfps_title"
+            android:summary="@string/screen_off_udfps_summary"
+            android:defaultValue="false" />
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
