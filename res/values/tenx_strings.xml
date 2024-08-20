@@ -717,4 +717,8 @@
     <!-- Keyguard charging animation -->
     <string name="keyguard_charging_animation_title">Charging animation</string>
     <string name="keyguard_charging_animation_summary">Display lottie animation when device is charging</string>
+
+    <!-- Hide screen capture status -->
+    <string name="hide_screen_capture_status_title">Hide screen capture status</string>
+    <string name="hide_screen_capture_status_summary">Hide screen capture and screen record status from all applications. Can be convenient in some cases but may lead to privacy leaks.</string>
 </resources>
