@@ -31,6 +31,14 @@
             android:summary="@string/three_finger_gesture_summary"
             android:defaultValue="false" />
 
+        <!-- No storage restriction -->
+        <com.tenx.support.preferences.SystemSettingSwitchPreference
+            android:key="no_storage_restrict"
+            tenx:position="middle"
+            android:title="@string/no_storage_restrict_title"
+            android:summary="@string/no_storage_restrict_summary"
+            android:defaultValue="false"/>
+
         <!-- Hide developer status -->
         <Preference
             android:key="hide_developer_status_settings"
