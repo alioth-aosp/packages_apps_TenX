@@ -16,6 +16,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/misc_title" >
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
@@ -25,6 +26,7 @@
         <!-- Three fingers swipe screenshot -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="three_finger_gesture"
+            tenx:position="top"
             android:title="@string/three_finger_gesture"
             android:summary="@string/three_finger_gesture_summary"
             android:defaultValue="false" />
@@ -32,6 +34,7 @@
         <!-- Pocket judge -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="pocket_judge"
+            tenx:position="middle"
             android:title="@string/pocket_judge_title"
             android:summary="@string/pocket_judge_summary"
             android:defaultValue="false" />
@@ -39,6 +42,7 @@
         <!-- Charging animation -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="charging_animation"
+            tenx:position="middle"
             android:title="@string/charging_animation_title"
             android:summary="@string/charging_animation_summary"
             android:defaultValue="true" />
@@ -46,6 +50,7 @@
         <!-- Floating rotation button -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="enable_floating_rotation_button"
+            tenx:position="middle"
             android:title="@string/floating_rotation_button_title"
             android:summary="@string/floating_rotation_button_summary"
             android:defaultValue="true" />
@@ -53,6 +58,7 @@
         <!-- Adaptive playback -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="adaptive_playback_enabled"
+            tenx:position="middle"
             android:title="@string/adaptive_playback_title"
             android:summary="@string/adaptive_playback_summary"
             android:persistent="false" />
@@ -60,6 +66,7 @@
         <!-- Adaptive playback timeout -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="adaptive_playback_timeout"
+            tenx:position="bottom"
             android:title="@string/adaptive_playback_timeout_title"
             android:defaultValue="30"
             android:max="600"

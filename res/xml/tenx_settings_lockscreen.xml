@@ -16,6 +16,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/lockscreen_title" >
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
@@ -41,6 +42,7 @@
         <!-- Double tap to sleep -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_lockscreen"
+            tenx:position="top"
             android:title="@string/lockscreen_doubletap_sleep_title"
             android:summary="@string/lockscreen_doubletap_sleep_summary"
             android:defaultValue="true" />
@@ -48,6 +50,7 @@
         <!-- Ripple effect on unlocking -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"
+            tenx:position="bottom"
             android:title="@string/enable_fingerprint_ripple_effect_title"
             android:summary="@string/enable_fingerprint_ripple_effect_summary"
             android:defaultValue="true" />
@@ -75,12 +78,14 @@
         <!-- Lockscreen weather enabled -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_enabled"
+            tenx:position="middle"
             android:title="@string/lockscreen_weather_title"
             android:summary="@string/lockscreen_weather_summary" />
 
         <!-- Lockscreen weather location -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_location"
+            tenx:position="middle"
             android:title="@string/lockscreen_weather_location_title"
             android:summary="@string/lockscreen_weather_location_summary"
             android:dependency="lockscreen_weather_enabled" />
@@ -88,6 +93,7 @@
         <!-- Lockscreen weather text -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_text"
+            tenx:position="bottom"
             android:title="@string/lockscreen_weather_text_title"
             android:summary="@string/lockscreen_weather_text_summary"
             android:defaultValue="true"
@@ -105,6 +111,7 @@
         <!-- Battery info -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
+            tenx:position="top"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
@@ -112,6 +119,7 @@
         <!-- Charging animation -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_charging_animation"
+            tenx:position="bottom"
             android:title="@string/keyguard_charging_animation_title"
             android:summary="@string/keyguard_charging_animation_summary"
             android:defaultValue="true" />
@@ -128,6 +136,7 @@
         <!-- FInger vibrate on success -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="fp_success_vibrate"
+            tenx:position="top"
             android:title="@string/fp_success_vibrate_title"
             android:summary="@string/fp_success_vibrate_summary"
             android:defaultValue="true" />
@@ -135,6 +144,7 @@
        	<!-- FInger vibrate on error -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="fp_error_vibrate"
+            tenx:position="bottom"
             android:title="@string/fp_error_vibrate_title"
             android:summary="@string/fp_error_vibrate_summary"
             android:defaultValue="true" />
@@ -151,6 +161,7 @@
         <!-- Power menu in lockscreen -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_enable_power_menu"
+            tenx:position="full"
             android:title="@string/lockscreen_enable_power_menu_title"
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />

@@ -28,8 +28,6 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.tenx.support.preferences.SystemSettingListPreference;
-
 public class UserInterface extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -41,7 +39,6 @@ public class UserInterface extends SettingsPreferenceFragment
     private static final String KEY_SYSTEM_FONT = "android.theme.customization.fonts";
     private static final String KEY_SIGNAL_ICONS = "android.theme.customization.signal_icon";
     private static final String KEY_WIFI_ICONS = "android.theme.customization.wifi_icon";
-    private static final String KEY_VOLUME_PANEL_STYLES = "custom_volume_styles";
 
     private Preference mMonet;
     private Preference mIconPack;
@@ -49,7 +46,6 @@ public class UserInterface extends SettingsPreferenceFragment
     private Preference mSystemFont;
     private Preference mSignalIcons;
     private Preference mWiFiIcons;
-    private SystemSettingListPreference mVolumePanaleStyles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +58,6 @@ public class UserInterface extends SettingsPreferenceFragment
         mSystemFont = (Preference) findPreference(KEY_SYSTEM_FONT);
         mSignalIcons = (Preference) findPreference(KEY_SIGNAL_ICONS);
         mWiFiIcons = (Preference) findPreference(KEY_WIFI_ICONS);
-        mVolumePanaleStyles = (SystemSettingListPreference) findPreference(KEY_VOLUME_PANEL_STYLES);
 
         setLayoutToPreference();
     }
@@ -79,7 +74,6 @@ public class UserInterface extends SettingsPreferenceFragment
         mSystemFont.setLayoutResource(R.layout.tenx_preference_middle);
         mSignalIcons.setLayoutResource(R.layout.tenx_preference_middle);
         mWiFiIcons.setLayoutResource(R.layout.tenx_preference_middle);
-        mVolumePanaleStyles.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

@@ -17,17 +17,20 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/smart_pixels_title" >
 
     <!-- Enable smart pixels -->
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="smart_pixels_enable"
+        tenx:position="top"
         android:title="@string/smart_pixels_enable_title"
         android:summary="@string/smart_pixels_enable_summary" />
 
     <!-- Smart pixels pattern -->
     <com.tenx.support.preferences.SystemSettingListPreference
         android:key="smart_pixels_pattern"
+        tenx:position="middle"
         android:entries="@array/smart_pixels_percent_strings"
         android:entryValues="@array/smart_pixels_percent_values"
         android:defaultValue="5"
@@ -38,12 +41,14 @@
     <!-- Smart pixels on power save -->
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="smart_pixels_on_power_save"
+        tenx:position="middle"
         android:title="@string/smart_pixels_on_power_save_title"
         android:summary="@string/smart_pixels_on_power_save_summary" />
 
     <!-- Smart pixels shift timeout -->
     <com.tenx.support.preferences.SystemSettingListPreference
         android:key="smart_pixels_shift_timeout"
+        tenx:position="bottom"
         android:entries="@array/smart_pixels_shift_times"
         android:entryValues="@array/smart_pixels_shift_values"
         android:defaultValue="4"

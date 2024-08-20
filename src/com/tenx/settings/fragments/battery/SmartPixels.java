@@ -42,10 +42,6 @@ public class SmartPixels extends SettingsPreferenceFragment {
 
     private static final String TAG = "SmartPixels";
 
-    private static final String KEY_ENABLE = "smart_pixels_enable";
-    private static final String KEY_PATTERN = "smart_pixels_pattern";
-    private static final String KEY_POWER_SAVE = "smart_pixels_on_power_save";
-    private static final String KEY_TIMEOUT = "smart_pixels_shift_timeout";
     private static final String SMART_PIXELS_FOOTER = "smart_pixels_footer";
 
     private SystemSettingSwitchPreference mEnable;
@@ -60,20 +56,6 @@ public class SmartPixels extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.smart_pixels);
 
         findPreference(SMART_PIXELS_FOOTER).setTitle(R.string.smart_pixels_warning_text);
-
-        mEnable = (SystemSettingSwitchPreference) findPreference(KEY_ENABLE);
-        mPattern = (SystemSettingListPreference) findPreference(KEY_PATTERN);
-        mSave = (SystemSettingSwitchPreference) findPreference(KEY_POWER_SAVE);
-        mTimeout = (SystemSettingListPreference) findPreference(KEY_TIMEOUT);
-
-        setLayoutToPreference();
-    }
-
-    private void setLayoutToPreference() {
-        mEnable.setLayoutResource(R.layout.tenx_preference_top);
-        mPattern.setLayoutResource(R.layout.tenx_preference_middle);
-        mSave.setLayoutResource(R.layout.tenx_preference_middle);
-        mTimeout.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

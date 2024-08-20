@@ -16,6 +16,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/quicksettings_title" >
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
@@ -25,6 +26,7 @@
         <!-- Battery styles -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_battery_style"
+            tenx:position="top"
             android:title="@string/status_bar_battery_style_title"
             android:summary="%s"
             android:entries="@array/qs_battery_style_entries"
@@ -34,6 +36,7 @@
         <!-- Battery percent -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_show_battery_percent"
+            tenx:position="bottom"
             android:title="@string/status_bar_battery_percent_title"
             android:summary="%s"
             android:entries="@array/status_bar_battery_percent_entries"
@@ -68,6 +71,7 @@
         <!-- Hide on secure lock screen -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="secure_lockscreen_qs_disabled"
+            tenx:position="full"
             android:title="@string/quick_settings_secure_lock_screen_title"
             android:summary="@string/quick_settings_secure_lock_screen_summary"
             android:defaultValue="false" />
@@ -84,6 +88,7 @@
         <!-- QS panel transparency -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_transparency"
+            tenx:position="top"
             android:title="@string/qs_transparency_title"
             android:summary="@string/qs_transparency_summary"
             android:defaultValue="100"
@@ -95,6 +100,7 @@
         <!-- QS dual tone -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_dual_tone"
+            tenx:position="middle"
             android:title="@string/qs_dual_tone_title"
             android:summary="@string/qs_dual_tone_summary"
             android:defaultValue="true" />
@@ -102,6 +108,7 @@
         <!-- Floating clear all -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"
+            tenx:position="middle"
             android:title="@string/quick_settings_floating_clear_all_title"
             android:summary="@string/quick_settings_floating_clear_all_summary"
             android:defaultValue="false" />
@@ -109,6 +116,7 @@
         <!-- Floating clear all background styles -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="notification_material_dismiss_background_style"
+            tenx:position="middle"
             android:title="@string/quick_settings_floating_clear_all_background_style_title"
             android:entries="@array/quick_settings_floating_clear_all_background_style_entries"
             android:entryValues="@array/quick_settings_floating_clear_all_background_style_values"
@@ -118,6 +126,7 @@
         <!-- Floating clear all background styles -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="notification_material_dismiss_icon_style"
+            tenx:position="middle"
             android:title="@string/quick_settings_floating_clear_all_icon_style_title"
             android:entries="@array/quick_settings_floating_clear_all_icon_style_entries"
             android:entryValues="@array/quick_settings_floating_clear_all_icon_style_values"
@@ -127,6 +136,7 @@
         <!-- Brightness slider -->
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
+            tenx:position="middle"
             android:title="@string/quick_settings_show_brightness_slider_title"
             android:entries="@array/quick_settings_show_brightness_slider_entries"
             android:entryValues="@array/quick_settings_show_brightness_slider_values"
@@ -135,6 +145,7 @@
         <!-- Brightness slider position -->
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_brightness_slider_position"
+            tenx:position="middle"
             android:title="@string/quick_settings_brightness_slider_position_title"
             android:entries="@array/quick_settings_brightness_slider_position_entries"
             android:entryValues="@array/quick_settings_brightness_slider_position_values"
@@ -143,20 +154,23 @@
         <!-- Auto brightness icon -->
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
+            tenx:position="middle"
             android:title="@string/quick_settings_auto_brightness_icon_title"
             android:summary="@string/quick_settings_auto_brightness_icon_summary"
             android:defaultValue="true" />
 
         <!-- Brightness percentage -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
-             android:title="@string/brightness_percent_title"
-             android:key="BRIGHTNESS_TEXTVIEW"
-             android:summary="@string/brightness_percent_summary"
-             android:defaultValue="false" />
+            android:title="@string/brightness_percent_title"
+            tenx:position="middle"
+            android:key="BRIGHTNESS_TEXTVIEW"
+            android:summary="@string/brightness_percent_summary"
+            android:defaultValue="false" />
 
         <!-- Secure QS tiles require unlock -->
         <com.tenx.support.preferences.SecureSettingSwitchPreference
             android:key="qstile_requires_unlocking"
+            tenx:position="middle"
             android:title="@string/quick_settings_require_unlock_title"
             android:summary="@string/quick_settings_require_unlock_summary"
             android:defaultValue="true"/>
@@ -164,6 +178,7 @@
         <!-- Data usage -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_show_data_usage"
+            tenx:position="middle"
             android:title="@string/quick_settings_data_usage_title"
             android:summary="@string/quick_settings_data_usage_summary"
             android:defaultValue="false" />
@@ -171,6 +186,7 @@
         <!-- Data usage -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_show_data_usage_icon"
+            tenx:position="middle"
             android:dependency="qs_show_data_usage"
             android:title="@string/quick_settings_data_usage_icon_title"
             android:summary="@string/quick_settings_data_usage_icon_summary"
@@ -179,6 +195,7 @@
         <!-- Data usage panel -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_data_usage_panel"
+            tenx:position="middle"
             android:title="@string/qs_data_usage_panel_title"
             android:summary="@string/qs_data_usage_panel_summary"
             android:defaultValue="false" />
@@ -186,6 +203,7 @@
         <!-- QS system info -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_system_info"
+            tenx:position="middle"
             android:title="@string/qs_system_info_title"
             android:summary="@string/qs_system_info_summary"
             android:defaultValue="false" />
@@ -193,6 +211,7 @@
         <!-- Quick QS settings -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="quick_qs_show_settings"
+            tenx:position="middle"
             android:title="@string/quick_qs_panel_settings_title"
             android:summary="@string/quick_qs_panel_settings_summary"
             android:defaultValue="false" />
@@ -200,6 +219,7 @@
        	<!-- Quick QS TenX text -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="quick_qs_show_tenx_text"
+            tenx:position="middle"
             android:title="@string/quick_qs_panel_tenx_text_title"
             android:summary="@string/quick_qs_panel_tenx_text_summary"
             android:defaultValue="false" />
@@ -207,6 +227,7 @@
         <!-- Quick QS view -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="quick_qs_show_view"
+            tenx:position="bottom"
             android:title="@string/quick_qs_panel_view_title"
             android:summary="@string/quick_qs_panel_view_summary"
             android:defaultValue="false" />
@@ -223,6 +244,7 @@
         <!-- Default qs tile corner radius -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="default_qs_tile_corner_radius"
+            tenx:position="top"
             android:title="@string/default_qs_tiles_corner_radius_title"
             android:max="32"
             settings:interval="1"
@@ -233,13 +255,15 @@
         <!-- QS Bluetooth auto on -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_bt_auto_on"
+            tenx:position="middle"
             android:title="@string/qs_bt_auto_on_title"
             android:summary="@string/qs_bt_auto_on_summary"
             android:defaultValue="false" />
 
         <!-- Legacy qstile styles -->
-        <ListPreference
+        <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_tile_ui_style"
+            tenx:position="middle"
             android:title="@string/qs_tile_ui_style_title"
             android:entries="@array/qs_tile_ui_style_entries"
             android:entryValues="@array/qs_tile_ui_style_values"
@@ -248,6 +272,7 @@
         <!-- Default qs tile style -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="default_qs_tile_styles"
+            tenx:position="middle"
             android:title="@string/default_qs_tiles_style_title"
             android:entries="@array/default_qs_tiles_style_entries"
             android:entryValues="@array/default_qs_tiles_style_values"
@@ -256,6 +281,7 @@
         <!-- Qs tile icon colors -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_tile_icon_color"
+            tenx:position="middle"
             android:title="@string/qs_tile_icon_color_title"
             android:entries="@array/qs_tile_all_color_entries"
             android:entryValues="@array/qs_tile_all_color_values"
@@ -264,6 +290,7 @@
         <!-- Qs tile label colors -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_tile_primary_label_color"
+            tenx:position="middle"
             android:title="@string/qs_tile_primary_label_color_title"
             android:entries="@array/qs_tile_all_color_entries"
             android:entryValues="@array/qs_tile_all_color_values"
@@ -272,6 +299,7 @@
         <!-- Qs tile label colors -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="qs_tile_secondary_label_color"
+            tenx:position="middle"
             android:title="@string/qs_tile_secondary_label_color_title"
             android:entries="@array/qs_tile_all_color_entries"
             android:entryValues="@array/qs_tile_all_color_values"
@@ -280,6 +308,7 @@
         <!-- Hide label -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
+            tenx:position="middle"
             android:title="@string/quick_settings_tile_label_hide_title"
             android:summary="@string/quick_settings_tile_label_hide_summary"
             android:defaultValue="false" />
@@ -287,6 +316,7 @@
         <!-- Hide secondary label only -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_secondary_label_hide"
+            tenx:position="middle"
             android:title="@string/quick_settings_tile_secondary_label_hide_title"
             android:summary="@string/quick_settings_tile_secondary_label_hide_summary"
             android:defaultValue="false" />
@@ -294,6 +324,7 @@
         <!-- Label text size -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_label_size"
+            tenx:position="middle"
             android:title="@string/quick_settings_tile_label_size_title"
             android:max="15"
             settings:min="10"
@@ -304,6 +335,7 @@
         <!-- Vertical layout -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_vertical_layout"
+            tenx:position="middle"
             android:title="@string/quick_settings_tile_layout_title"
             android:summary="@string/quick_settings_tile_layout_summary"
             android:defaultValue="false" />
@@ -311,6 +343,7 @@
         <!-- Columns (portrait) -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_layout_columns"
+            tenx:position="middle"
             android:title="@string/quick_settings_columns_portrait_title"
             android:max="5"
             settings:min="2"
@@ -320,6 +353,7 @@
         <!-- Columns (landscape) -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_layout_columns_landscape"
+            tenx:position="middle"
             android:title="@string/quick_settings_columns_landscape_title"
             android:max="5"
             settings:min="2"
@@ -329,6 +363,7 @@
         <!-- Quick QS rows (portrait) -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qqs_layout_rows"
+            tenx:position="middle"
             android:title="@string/quick_settings_qqs_rows_portrait_title"
             android:max="3"
             settings:min="1"
@@ -338,6 +373,7 @@
         <!-- Quick QS rows (landscape) -->
         <com.tenx.support.preferences.SystemSettingSeekBarPreference
             android:key="qqs_layout_rows_landscape"
+            tenx:position="bottom"
             android:title="@string/quick_settings_qqs_rows_landscape_title"
             android:max="3"
             settings:min="1"

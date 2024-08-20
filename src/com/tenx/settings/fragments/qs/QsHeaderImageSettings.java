@@ -223,13 +223,10 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     }
 
     private void setLayoutToPreference() {
-        mEnable.setLayoutResource(R.layout.tenx_preference_top);
         mHeaderBrowse.setLayoutResource(R.layout.tenx_preference_middle);
         mDaylightHeaderPack.setLayoutResource(R.layout.tenx_preference_middle);
         mHeaderProvider.setLayoutResource(R.layout.tenx_preference_middle);
         mFileHeader.setLayoutResource(R.layout.tenx_preference_middle);
-        mHeight.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
-        mShadow.setLayoutResource(R.layout.tenx_preference_seekbar_bottom);
     }
 
     @Override

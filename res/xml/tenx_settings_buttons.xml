@@ -16,6 +16,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/buttons_title" >
 
     <com.tenx.settings.preferences.TenXPreferenceCategory
@@ -24,11 +25,13 @@
 
        	<!-- Lineage buttons -->
         <lineageos.preference.LineagePartsPreference
-            android:key="button_settings" />
+            android:key="button_settings"
+            tenx:position="top" />
 
         <!-- Power menu -->
         <lineageos.preference.LineagePartsPreference
-            android:key="power_menu" />
+            android:key="power_menu"
+            tenx:position="bottom" />
 
     </com.tenx.settings.preferences.TenXPreferenceCategory>
 
@@ -42,6 +45,7 @@
         <!-- Volumen panel text -->
         <com.tenx.support.preferences.SystemSettingSwitchPreference
             android:key="VOLUME_TEXTVIEW"
+            tenx:position="top"
             android:title="@string/volume_persen_switch_title"
             android:summary="@string/volume_persen_switch_summary"
             android:defaultValue="false" />
@@ -49,6 +53,7 @@
         <!-- Volumen panel text type -->
         <com.tenx.support.preferences.SystemSettingListPreference
             android:key="VOLUME_TEXTVIEW_STYLE"                                                   
+            tenx:position="bottom"
             android:title="@string/volume_persen_style_title"
             android:summary="%s"
             android:dialogTitle="@string/volume_persen_style_title"

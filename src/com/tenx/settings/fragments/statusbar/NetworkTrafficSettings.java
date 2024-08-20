@@ -76,8 +76,6 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         int location = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
         updateEnabledStates(location);
-
-        setLayoutToPreference();
     }
 
     @Override
@@ -99,17 +97,6 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficRefreshInterval.setEnabled(enabled);
         mNetTrafficUnits.setEnabled(enabled);
         mNetTrafficIconType.setEnabled(enabled);
-    }
-
-    private void setLayoutToPreference() {
-        mNetTrafficLocation.setLayoutResource(R.layout.tenx_preference_top);
-        mNetTrafficIconType.setLayoutResource(R.layout.tenx_preference_middle);
-        mNetTrafficMode.setLayoutResource(R.layout.tenx_preference_middle);
-        mNetTrafficAutohide.setLayoutResource(R.layout.tenx_preference_middle);
-        mNetTrafficAutohideThreshold.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
-        mNetTrafficRefreshInterval.setLayoutResource(R.layout.tenx_preference_seekbar_middle);
-        mNetTrafficUnits.setLayoutResource(R.layout.tenx_preference_middle);
-        mNetTrafficHideArrow.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override

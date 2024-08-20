@@ -13,11 +13,13 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/monet_settings_title"
+    xmlns:tenx="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:key="theme_style"
         android:title="@string/theme_style_title"
+        tenx:position="top"
         android:entries="@array/theme_style_entries"
         android:entryValues="@array/theme_style_values"
         android:defaultValue="0" />
@@ -25,12 +27,14 @@
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="monet_accurate_shade"
         android:title="@string/monet_accurate_shade_title"
+        tenx:position="middle"
         android:summary="@string/monet_accurate_shade_summary"
         android:defaultValue="false" />
 
     <com.tenx.support.preferences.SystemSettingListPreference
         android:key="color_source"
         android:title="@string/color_source_title"
+        tenx:position="middle"
         android:entries="@array/color_source_entries"
         android:entryValues="@array/color_source_values"
         android:defaultValue="0" />
@@ -38,27 +42,32 @@
     <com.tenx.support.colorpicker.ColorPickerPreference
         android:key="accent_color"
         android:title="@string/accent_color_title"
+        tenx:position="middle"
         android:summary="@string/accent_color_summary" />
 
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="accent_background"
         android:title="@string/accent_background_title"
+        tenx:position="middle"
         android:summary="@string/accent_background_summary"
         android:defaultValue="false" />
 
     <com.tenx.support.colorpicker.ColorPickerPreference
         android:key="bg_color"
         android:title="@string/bg_color_title"
+        tenx:position="middle"
         android:summary="@string/bg_color_summary" />
 
     <com.tenx.support.colorpicker.ColorPickerPreference
         android:key="secondary_color"
         android:title="@string/secondary_color_title"
+        tenx:position="middle"
         android:summary="@string/secondary_color_summary" />
 
     <com.tenx.support.preferences.CustomSeekBarPreference
         android:key="luminance_factor"
         android:title="@string/luminance_factor_title"
+        tenx:position="middle"
         android:max="100"
         settings:min="-95"
         settings:interval="5"
@@ -69,6 +78,7 @@
     <com.tenx.support.preferences.CustomSeekBarPreference
         android:key="chroma_factor"
         android:title="@string/chroma_factor_title"
+        tenx:position="middle"
         android:max="100"
         settings:min="-95"
         settings:interval="5"
@@ -79,6 +89,7 @@
     <com.tenx.support.preferences.SystemSettingSwitchPreference
         android:key="tint_background"
         android:title="@string/tint_background_title"
+        tenx:position="bottom"
         android:summary="@string/tint_background_summary"
         android:defaultValue="false" />
 

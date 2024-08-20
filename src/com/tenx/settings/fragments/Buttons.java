@@ -29,22 +29,11 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import lineageos.preference.LineagePartsPreference;
 import com.tenx.support.preferences.SystemSettingListPreference;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
 
 public class Buttons extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
-
-    private static final String KEY_LINEAGE_BUTTON_SETTINGS = "button_settings";
-    private static final String KEY_LINEAGE_POWER_MENU = "power_menu";
-    private static final String KEY_VOLUME_TEXT = "VOLUME_TEXTVIEW";
-    private static final String KEY_VOLUME_TEXT_TYPE = "VOLUME_TEXTVIEW_STYLE";
-
-    private LineagePartsPreference mLineageButtonSettings;
-    private LineagePartsPreference mLineagePowerMenu;
-    private SystemSettingSwitchPreference mVolumeText;
-    private SystemSettingListPreference mVolumeTextType;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -53,25 +42,11 @@ public class Buttons extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mLineageButtonSettings = (LineagePartsPreference) findPreference(KEY_LINEAGE_BUTTON_SETTINGS);
-        mLineagePowerMenu = (LineagePartsPreference) findPreference(KEY_LINEAGE_POWER_MENU);
-        mVolumeText = (SystemSettingSwitchPreference) findPreference(KEY_VOLUME_TEXT);
-        mVolumeTextType = (SystemSettingListPreference) findPreference(KEY_VOLUME_TEXT_TYPE);
-
-        setLayoutToPreference();
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         return false;
-    }
-
-    private void setLayoutToPreference() {
-        mLineageButtonSettings.setLayoutResource(R.layout.tenx_preference_top);
-        mLineagePowerMenu.setLayoutResource(R.layout.tenx_preference_bottom);
-        mVolumeText.setLayoutResource(R.layout.tenx_preference_top);
-        mVolumeTextType.setLayoutResource(R.layout.tenx_preference_bottom);
     }
 
     @Override
