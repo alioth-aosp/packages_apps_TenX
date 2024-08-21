@@ -19,7 +19,7 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/tenx_title">
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="theme"
         android:title="@string/theme_category_title">
 
@@ -75,6 +75,6 @@
             android:summary="%s"
             android:defaultValue="0" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

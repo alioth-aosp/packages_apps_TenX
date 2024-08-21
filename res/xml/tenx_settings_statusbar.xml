@@ -19,7 +19,7 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/statusbar_title" >
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="statusbar_icons"
         android:title="@string/status_bar_icons_category_title">
 
@@ -205,12 +205,12 @@
             android:summary="@string/status_bar_bluetooth_battery_summary"
             android:defaultValue="true" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="status_bar_gestures_category"
         android:title="@string/status_bar_gestures_category_title">
 
@@ -231,12 +231,12 @@
             android:entryValues="@array/status_bar_quick_pull_down_values"
             android:defaultValue="0" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="statusbar_misc"
         android:title="@string/misc_category_title">
 
@@ -308,6 +308,6 @@
             android:defaultValue="24"
             android:dependency="use_custom_statusbar_height" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

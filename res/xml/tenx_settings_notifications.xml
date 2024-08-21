@@ -22,7 +22,7 @@
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="notification_light"
         android:title="@string/light_category_title">
 
@@ -33,12 +33,12 @@
             settings:requiresConfig="@*android:bool/config_intrusiveNotificationLed"
             settings:replacesKey="notification_pulse" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="heads_up"
         android:title="@string/heads_up_category_title">
 
@@ -71,12 +71,12 @@
             android:max="10"
             android:dependency="heads_up_notifications_enabled" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="notification"
         android:title="@string/misc_category_title">
 
@@ -103,6 +103,6 @@
             android:summary="@string/show_clipboard_overlay_summary"
             android:defaultValue="true"/>
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

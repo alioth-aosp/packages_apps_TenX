@@ -19,7 +19,7 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/misc_title" >
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="volume_panel"
         android:title="@string/misc_category_title">
 
@@ -98,6 +98,6 @@
             settings:units="sec"
             android:dependency="adaptive_playback_enabled" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

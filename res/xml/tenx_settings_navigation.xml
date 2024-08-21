@@ -19,7 +19,7 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/navigation_title" >
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="navbar"
         android:title="@string/navbar_category_title">
 
@@ -40,6 +40,6 @@
             android:defaultValue="true"
             android:dependency="force_show_navbar" />
 
-     </com.tenx.settings.preferences.TenXPreferenceCategory>
+     </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

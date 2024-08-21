@@ -31,7 +31,7 @@
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:title="@string/sensor_block_app_picker_title"
         android:dependency="sensor_block"
         android:key="sensor_block_applications">
@@ -41,7 +41,7 @@
             android:key="add_sensor_block_packages"
             android:title="@string/add_sensor_block_package_title" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference
         android:key="sensor_block_footer"

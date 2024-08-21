@@ -19,7 +19,7 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/animations_title" >
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="quick_settings_animations_category"
         android:title="@string/quick_settings_tiles_animations_category_title">
 
@@ -52,12 +52,12 @@
             android:entryValues="@array/quick_settings_tile_animation_interpolator_values"
             android:defaultValue="0" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="screen_off_animations_category"
         android:title="@string/screen_off_category_title">
 
@@ -71,6 +71,6 @@
             android:entryValues="@array/screen_off_animation_values"
             android:defaultValue="0" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>

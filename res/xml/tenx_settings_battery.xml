@@ -19,7 +19,7 @@
     xmlns:tenx="http://schemas.android.com/apk/res-auto"
     android:title="@string/battery_title" >
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="battery_light"
         android:title="@string/light_category_title">
 
@@ -29,12 +29,12 @@
             settings:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
             settings:requiresConfigMask="64" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
     <com.android.settingslib.widget.LayoutPreference
         android:layout="@layout/tenx_divider" />
 
-    <com.tenx.settings.preferences.TenXPreferenceCategory
+    <com.tenx.support.preferences.TenXPreferenceCategory
         android:key="battery_saver"
         android:title="@string/saver_category_title">
 
@@ -52,6 +52,6 @@
             android:summary="@string/smart_pixels_summary" 
             android:fragment="com.tenx.settings.fragments.battery.SmartPixels" />
 
-    </com.tenx.settings.preferences.TenXPreferenceCategory>
+    </com.tenx.support.preferences.TenXPreferenceCategory>
 
 </PreferenceScreen>
