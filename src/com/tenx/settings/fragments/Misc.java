@@ -18,6 +18,9 @@ package com.tenx.settings.fragments;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Handler;
+import android.util.Log;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
@@ -25,10 +28,15 @@ import android.provider.Settings;
 import androidx.preference.*;
 
 import com.android.internal.logging.nano.MetricsProto;
+import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.tenx.support.preferences.SystemSettingSwitchPreference;
+import com.android.internal.util.tenx.SystemRestartUtils;
 
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -37,13 +45,17 @@ public class Misc extends SettingsPreferenceFragment
 
     private static final String KEY_POCKET_JUDGE = "pocket_judge";
     private static final String KEY_DEV_SETTINGS = "hide_developer_status_settings";
+    private static final String KEY_PIF_JSON_FILE_PREFERENCE = "pif_json_file_preference";
 
     private SystemSettingSwitchPreference mPocketJudge;
     private Preference mDeveloperSettings;
+    private Preference mPifJsonFilePreference;
+    private Handler mHandler;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mHandler = new Handler();
         addPreferencesFromResource(R.xml.tenx_settings_misc);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -51,6 +63,7 @@ public class Misc extends SettingsPreferenceFragment
 
         mPocketJudge = (SystemSettingSwitchPreference) findPreference(KEY_POCKET_JUDGE);
         mDeveloperSettings = (Preference) findPreference(KEY_DEV_SETTINGS);
+        mPifJsonFilePreference = findPreference(KEY_PIF_JSON_FILE_PREFERENCE);
 
         boolean mPocketJudgeSupported = res.getBoolean(
                 com.android.internal.R.bool.config_pocketModeSupported);
@@ -58,6 +71,42 @@ public class Misc extends SettingsPreferenceFragment
             prefScreen.removePreference(mPocketJudge);
 
         mDeveloperSettings.setLayoutResource(R.layout.tenx_preference_middle);
+    }
+
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mPifJsonFilePreference) {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("application/json");
+            startActivityForResult(intent, 10001);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 10001 && resultCode == Activity.RESULT_OK) {
+            Uri uri = data.getData();
+            Log.d(TAG, "URI received: " + uri.toString());
+            try (InputStream inputStream = getActivity().getContentResolver().openInputStream(uri)) {
+                if (inputStream != null) {
+                    String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+                    Log.d(TAG, "JSON data: " + json);
+                    JSONObject jsonObject = new JSONObject(json);
+                    for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
+                        String key = it.next();
+                        String value = jsonObject.getString(key);
+                        Log.d(TAG, "Setting property: persist.sys.pihooks_" + key + " = " + value);
+                        SystemProperties.set("persist.sys.pihooks_" + key, value);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error reading JSON or setting properties", e);
+        }
     }
 
     @Override
